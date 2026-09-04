@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder café">
+  <rect width="400" height="300" fill="#faf3ea"/>
+  <rect x="10" y="10" width="380" height="280" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
+  <path d="M155 110 h90 v38 a22 22 0 0 1 -22 22 h-46 a22 22 0 0 1 -22 -22 z" fill="#c1673c"/>
+  <path d="M245 118 h10 a14 14 0 0 1 0 28 h-10" fill="none" stroke="#c1673c" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="200" cy="176" rx="62" ry="9" fill="#faf3ea" stroke="#e5d9c8" stroke-width="2"/>
+  <path d="M168 92 q-8 -10 0 -20" fill="none" stroke="#7a8b6f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 92 q-8 -10 0 -20" fill="none" stroke="#7a8b6f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M232 92 q-8 -10 0 -20" fill="none" stroke="#7a8b6f" stroke-width="4" stroke-linecap="round"/>
+  <text x="200" y="226" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#3a2e26">Café</text>
+  <text x="200" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+</svg>

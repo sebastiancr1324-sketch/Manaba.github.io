@@ -1,0 +1,259 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// RESTAURANTES (B2B) - propuesta para restaurantes/cafeterías
+// =====================================================
+
+.rest-intro {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: $space-lg;
+  padding-block: $space-lg $space-lg;
+
+  @include respond-desktop {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    margin-bottom: $space-sm;
+
+    em {
+      font-style: italic;
+      color: $terracota;
+    }
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 48ch;
+    margin-bottom: $space-md;
+    font-size: 1.05rem;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-start, $space-sm);
+    flex-wrap: wrap;
+  }
+
+  &__visual {
+    aspect-ratio: 1 / 1;
+    max-width: 520px;
+    margin-inline: auto;
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+// Bloque genérico (secciones intermedias)
+.rest-block {
+  padding-block: $space-lg;
+
+  &--salvia {
+    background: $salvia;
+    color: $blanco-calido;
+
+    .rest-block__eyebrow,
+    .rest-block__title {
+      color: $blanco-calido;
+    }
+
+    .rest-block__lead {
+      color: rgba($blanco-calido, 0.9);
+    }
+  }
+
+  &--plana {
+    background: $blanco-calido;
+    border-block: 1px solid $borde;
+  }
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-block: $space-xs $space-sm;
+  }
+
+  &__lead {
+    color: $marron-suave;
+    max-width: 55ch;
+    margin-bottom: $space-md;
+  }
+}
+
+// Granos (catalogo)
+.rest-granos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @include respond-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-grano {
+  background: $blanco-calido;
+  color: $marron;
+  border-radius: $radius-md;
+  padding: $space-md;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba($marron, 0.15);
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    color: $terracota;
+    margin-bottom: 0.35rem;
+  }
+
+  &__note {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $salvia;
+    margin-bottom: $space-sm;
+  }
+
+  &__desc {
+    color: $marron-suave;
+    font-size: 0.92rem;
+    margin-bottom: $space-sm;
+  }
+
+  &__tag {
+    font-size: 0.78rem;
+    color: $marron;
+    background: $crema;
+    border: 1px solid $borde;
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    display: inline-block;
+  }
+}
+
+// Beneficios
+.rest-beneficios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @include respond-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.rest-beneficio {
+  background: $crema;
+  border: 1px solid $borde;
+  border-radius: $radius-md;
+  padding: $space-md;
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__desc {
+    color: $marron-suave;
+    font-size: 0.92rem;
+  }
+}
+
+// Plan/alianza
+.rest-plan {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @include respond-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rest-plan__item {
+  text-align: center;
+  padding: $space-md;
+  border: 1px solid $borde;
+  border-radius: $radius-md;
+
+  .rest-plan__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $terracota;
+    color: $blanco-calido;
+    font-family: $font-display;
+    font-weight: 700;
+    margin-bottom: $space-sm;
+  }
+
+  .rest-plan__name {
+    font-family: $font-display;
+    font-weight: 600;
+    color: $marron;
+    margin-bottom: 0.3rem;
+  }
+
+  .rest-plan__desc {
+    color: $marron-suave;
+    font-size: 0.9rem;
+  }
+}
+
+// Contacto / formulario
+.rest-contact {
+  &__inner {
+    @extend %container;
+    max-width: 760px;
+    padding-block: $space-lg;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-block: $space-xs $space-sm;
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 52ch;
+    margin: 0 auto $space-md;
+  }
+}

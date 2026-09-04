@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// FORMULARIOS compartidos (contacto, reservas, restaurantes)
+// =====================================================
+
+.formulario {
+  background: $blanco-calido;
+  border: 1px solid $borde;
+  border-radius: $radius-md;
+  padding: $space-md;
+  text-align: left;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-sm;
+
+    @include respond-tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    margin-bottom: $space-sm;
+
+    label {
+      display: block;
+      font-family: $font-body;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: $marron;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: $font-body;
+      font-size: 0.95rem;
+      color: $marron;
+      background: $blanco-calido;
+      border: 1px solid $borde;
+      border-radius: $radius-sm;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $terracota;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Interior del café Manaba">
+  <rect width="800" height="1000" fill="#faf3ea"/>
+  <rect x="40" y="40" width="720" height="920" rx="28" fill="#fffdf9" stroke="#e5d9c8" stroke-width="3"/>
+  <path d="M90 236 h620 v44 a22 22 0 0 1 -22 22 h-576 a22 22 0 0 1 -22 -22 z" fill="#c1673c"/>
+  <rect x="76" y="302" width="648" height="160" rx="12" fill="#faf3ea" stroke="#e5d9c8" stroke-width="3"/>
+  <rect x="76" y="302" width="648" height="36" fill="#7a8b6f"/>
+  <path d="M240 526 a84 84 0 1 0 168 0 a84 84 0 1 0 -168 0" fill="#7a8b6f" opacity="0.25"/>
+  <path d="M400 470 v44 a22 22 0 0 1 -22 22 h-46 a22 22 0 0 1 -22 -22 z" fill="#c1673c"/>
+  <path d="M332 496 h-14 a14 14 0 0 0 0 28 h14" fill="none" stroke="#c1673c" stroke-width="7" stroke-linecap="round"/>
+  <rect x="470" y="520" width="120" height="16" rx="8" fill="#3a2e26"/>
+  <rect x="470" y="560" width="150" height="16" rx="8" fill="#7a6a5c" opacity="0.6"/>
+  <text x="220" y="650" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#3a2e26">Manaba</text>
+  <text x="220" y="706" text-anchor="middle" font-family="sans-serif" font-size="28" letter-spacing="5" fill="#c1673c">CAFÉ DE BARRIO</text>
+  <text x="400" y="880" text-anchor="middle" font-family="sans-serif" font-size="26" letter-spacing="4" fill="#7a6a5c">PLACEHOLDER HERO</text>
+</svg>

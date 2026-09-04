@@ -1,0 +1,51 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// PAGINAS INTERNAS - intro comun y CTA
+// =====================================================
+
+.pagina-hero {
+  @extend %container;
+  max-width: 900px;
+  padding-block: $space-lg $space-md;
+
+  &__eyebrow {
+    @extend %eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: $space-sm;
+
+    em {
+      font-style: italic;
+      color: $terracota;
+    }
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 55ch;
+  }
+}
+
+.cta-band {
+  @extend %container;
+  text-align: center;
+  padding-block: $space-lg;
+
+  &__inner {
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    padding: $space-md $space-lg;
+  }
+
+  &__title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: $space-sm;
+  }
+}

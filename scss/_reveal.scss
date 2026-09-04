@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// REVEAL - animaciones de aparicion al scrollear
+// =====================================================
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+
+  // Origen: desde los costados
+  &--left {
+    transform: translateX(-48px);
+  }
+
+  &--right {
+    transform: translateX(48px);
+  }
+
+  &--bottom {
+    transform: translateY(36px);
+  }
+
+  // Estado activo (entra en viewport)
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Cards que entran en cascada
+.reveal-stagger {
+  & > * {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) * 90}ms;
+      }
+    }
+  }
+
+  &.is-visible > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Logo Manaba">
+  <rect width="800" height="800" rx="170" fill="#c1673c"/>
+  <text x="400" y="465" text-anchor="middle" font-family="Georgia, serif" font-size="450" font-weight="700" fill="#fffdf9">M</text>
+  <text x="400" y="610" text-anchor="middle" font-family="sans-serif" font-size="54" letter-spacing="14" fill="#fffdf9">MANABA</text>
+  <text x="400" y="672" text-anchor="middle" font-family="sans-serif" font-size="26" letter-spacing="6" fill="#fffdf9" opacity="0.85">CAFÉ DE ESPECIALIDAD</text>
+</svg>

@@ -1,0 +1,183 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// NOSOTROS
+// =====================================================
+
+.nosotros-intro {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: $space-lg;
+  padding-block: $space-sm $space-lg;
+
+  @include respond-desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: $space-sm;
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 50ch;
+  }
+
+  &__visual {
+    aspect-ratio: 4 / 5;
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.nosotros-valores {
+  background: $salvia;
+  color: $blanco-calido;
+  padding-block: $space-lg;
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__title {
+    color: $blanco-calido;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: $space-md;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.nosotros-valor {
+  text-align: center;
+  background: rgba($blanco-calido, 0.08);
+  border: 1px solid rgba($blanco-calido, 0.25);
+  border-radius: $radius-md;
+  padding: $space-md;
+
+  &__title {
+    font-family: $font-display;
+    color: $blanco-calido;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__desc {
+    color: rgba($blanco-calido, 0.85);
+    font-size: 0.9rem;
+  }
+}
+
+.nosotros-historia {
+  @extend %container;
+  padding-block: $space-lg;
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: $space-md;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.hito {
+  background: $blanco-calido;
+  border: 1px solid $borde;
+  border-left: 4px solid $terracota;
+  border-radius: $radius-sm;
+  padding: $space-md;
+
+  &__anio {
+    font-family: $font-display;
+    font-weight: 700;
+    color: $terracota;
+    font-size: 1.4rem;
+  }
+
+  &__titulo {
+    font-family: $font-display;
+    font-weight: 600;
+    margin-block: 0.3rem;
+  }
+
+  &__desc {
+    color: $marron-suave;
+    font-size: 0.9rem;
+  }
+}
+
+.nosotros-equipo {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: $space-lg;
+  padding-block: $space-sm $space-lg;
+
+  @include respond-desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__visual {
+    aspect-ratio: 4 / 5;
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: $space-sm;
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 50ch;
+    margin-bottom: $space-md;
+  }
+}

@@ -1,0 +1,77 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// RESET & BASE
+// =====================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $crema;
+  color: $marron;
+  font-family: $font-body;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.container {
+  @extend %container;
+}
+
+.btn {
+  @include button-base;
+
+  &--primary {
+    background: $terracota;
+    color: $blanco-calido;
+
+    &:hover {
+      background: $terracota-suave;
+    }
+  }
+
+  &--ghost {
+    border-color: $marron;
+    color: $marron;
+
+    &:hover {
+      border-color: $terracota;
+      color: $terracota;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

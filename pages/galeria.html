@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería | Manaba — Café de especialidad y brunch</title>
+  <meta name="description" content="Galería de imágenes de Manaba: el local, el bar, el brunch y la panadería de especialidad.">
+
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo">Manaba</a>
+
+      <button class="header__toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="galeria.html" aria-current="page">Galería</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="restaurantes.html">Restaurantes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-hero reveal reveal--left">
+      <span class="pagina-hero__eyebrow">Fotos del día a día</span>
+      <h1 class="pagina-hero__title">Manaba <em>en imágenes</em></h1>
+      <p class="pagina-hero__text">El local, el bar, el brunch y la panadería. Así se ve un día cualquiera en Manaba.</p>
+    </section>
+
+    <section class="galeria">
+      <div class="galeria__grid reveal-stagger">
+        <figure class="item-galeria">
+          <img src="../img/galeria-interior.svg" alt="Interior del café Manaba">
+          <figcaption>El local</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="../img/item-brunch.svg" alt="Tostado de palta y huevo poché">
+          <figcaption>Tostado de palta</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="../img/item-cafe.svg" alt="Café de especialidad">
+          <figcaption>Café de origen</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="../img/item-panaderia.svg" alt="Panadería propia de Manaba">
+          <figcaption>Panadería de la mañana</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="../img/item-granos.svg" alt="Granos de café envasados">
+          <figcaption>Granos para llevar</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="../img/cafe-mayorista.svg" alt="Propuesta Manaba Mayorista">
+          <figcaption>Manaba Mayorista</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand">Manaba</p>
+        <p class="footer__tagline">Café de especialidad y brunch de barrio</p>
+      </div>
+
+      <div>
+        <p class="footer__title">Horarios</p>
+        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
+      </div>
+
+      <div>
+        <p class="footer__title">Contacto</p>
+        <p class="footer__text">Palermo, CABA<br>+54 9 11 0000-0000</p>
+        <div class="footer__social">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram de Manaba">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__title">Legal</p>
+        <p class="footer__text">
+          <a href="terminos.html">Términos de uso</a><br>
+          <a href="privacidad.html">Política de privacidad</a><br>
+          <a href="cookies.html">Política de cookies</a><br>
+          <a href="aviso-legal.html">Aviso legal</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer__legal">© 2026 Manaba. Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="cookies-banner" id="cookiesBanner" role="dialog" aria-label="Aviso de cookies">
+    <div class="cookies-banner__inner">
+      <p>Usamos cookies para el funcionamiento del sitio y para recordar tus preferencias. Podés configurarlas en <a href="cookies.html">nuestra política de cookies</a>.</p>
+      <div class="cookies-banner__actions">
+        <button type="button" class="btn btn--ghost" data-cookie="deny">Rechazar</button>
+        <button type="button" class="btn btn--primary" data-cookie="accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

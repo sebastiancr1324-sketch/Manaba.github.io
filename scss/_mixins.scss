@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+// =====================================================
+// MIXINS
+// =====================================================
+
+@mixin flex($direction: row, $align: center, $justify: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin respond-tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin respond-desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// =====================================================
+// PLACEHOLDERS (para @extend)
+// =====================================================
+
+%container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: $space-sm;
+}
+
+%eyebrow {
+  font-family: $font-body;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $terracota;
+  font-weight: 700;
+}

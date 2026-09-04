@@ -1,0 +1,23 @@
+// =====================================================
+// MAIN — Manaba
+// Archivo principal: importa todos los partials en orden
+// =====================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+@use 'header';
+@use 'hero';
+@use 'destacados';
+@use 'paginas';
+@use 'forms';
+@use 'reveal';
+@use 'legal';
+@use 'cookies';
+@use 'menu';
+@use 'reservas';
+@use 'galeria';
+@use 'nosotros';
+@use 'contacto';
+@use 'restaurantes';
+@use 'footer';

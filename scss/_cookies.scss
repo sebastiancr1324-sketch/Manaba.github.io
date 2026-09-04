@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// BANNER DE COOKIES
+// =====================================================
+
+.cookies-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: $blanco-calido;
+  border-top: 1px solid $borde;
+  box-shadow: 0 -8px 24px rgba($marron, 0.08);
+  padding-block: $space-sm;
+
+  &__inner {
+    @extend %container;
+    @include flex(row, center, space-between, $space-md);
+    flex-wrap: wrap;
+  }
+
+  p {
+    flex: 1 1 320px;
+    color: $marron-suave;
+    font-size: 0.9rem;
+
+    a {
+      color: $terracota;
+    }
+  }
+
+  &__actions {
+    @include flex(row, center, flex-start, $space-sm);
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,78 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// HERO
+// =====================================================
+
+.hero {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: $space-lg;
+  padding-block: $space-lg $space-md;
+
+  @include respond-desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin-bottom: $space-sm;
+
+    em {
+      font-style: italic;
+      color: $terracota;
+    }
+  }
+
+  &__text {
+    color: $marron-suave;
+    max-width: 42ch;
+    margin-bottom: $space-md;
+    font-size: 1.05rem;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-start, $space-sm);
+    flex-wrap: wrap;
+  }
+
+  &__visual {
+    aspect-ratio: 1 / 1;
+    max-width: 560px;
+    margin-inline: auto;
+    border: 1px solid $borde;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Franja de horarios/info rapida debajo del hero
+.info-franja {
+  @extend %container;
+  @include flex(row, center, space-between, $space-md);
+  flex-wrap: wrap;
+  padding-block: $space-md;
+  border-top: 1px solid $borde;
+  border-bottom: 1px solid $borde;
+  color: $marron-suave;
+  font-size: 0.9rem;
+
+  span strong {
+    color: $marron;
+    font-family: $font-display;
+  }
+}

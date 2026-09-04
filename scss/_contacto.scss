@@ -1,0 +1,56 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// CONTACTO
+// =====================================================
+
+.contacto-info {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+  padding-block: $space-sm $space-lg;
+
+  @include respond-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-contacto {
+  background: $blanco-calido;
+  border: 1px solid $borde;
+  border-radius: $radius-md;
+  padding: $space-md;
+  text-align: center;
+
+  &__title {
+    font-family: $font-body;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $terracota;
+    margin-bottom: $space-xs;
+  }
+
+  &__text {
+    color: $marron-suave;
+    font-size: 0.92rem;
+  }
+}
+
+.contacto-form {
+  @extend %container;
+  max-width: 760px;
+  padding-block: $space-sm $space-lg;
+
+  &__eyebrow {
+    @extend %eyebrow;
+  }
+
+  &__title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-block: $space-xs $space-md;
+  }
+}

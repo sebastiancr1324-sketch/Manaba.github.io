@@ -1,0 +1,59 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =====================================================
+// RESERVAS
+// =====================================================
+
+.reserva-grid {
+  @extend %container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+  align-items: start;
+  padding-block: $space-sm $space-lg;
+
+  @include respond-desktop {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+}
+
+.reserva-info {
+  background: $blanco-calido;
+  border: 1px solid $borde;
+  border-radius: $radius-md;
+  padding: $space-md;
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    margin-bottom: $space-sm;
+  }
+
+  &__item {
+    margin-bottom: $space-sm;
+
+    h3 {
+      font-family: $font-body;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $terracota;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      color: $marron-suave;
+      font-size: 0.92rem;
+    }
+  }
+
+  &__politica {
+    margin-top: $space-sm;
+    border-top: 1px solid $borde;
+    padding-top: $space-sm;
+    color: $marron-suave;
+    font-size: 0.82rem;
+  }
+}
