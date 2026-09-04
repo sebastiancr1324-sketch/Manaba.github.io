@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.manaba.com.ar/sitemap.xml
+Sitemap: https://sebastiancr1324-sketch.github.io/Manaba.github.io/sitemap.xml
