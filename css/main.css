@@ -289,57 +289,6 @@ input, select, textarea {
   font-feature-settings: "tnum" 1;
 }
 
-.ticker {
-  background: #2E2118;
-  color: rgba(255, 253, 249, 0.72);
-  overflow: hidden;
-  position: relative;
-  z-index: 90;
-  border-bottom: 1px solid rgba(255, 253, 249, 0.08);
-}
-.ticker__track {
-  display: flex;
-  width: max-content;
-  animation: manaba-marquee 30s linear infinite;
-  animation-play-state: running;
-}
-@media (hover: hover) {
-  .ticker__track:hover {
-    animation-play-state: paused;
-  }
-}
-.ticker__track {
-  padding-block: 0.6rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.ticker__group {
-  display: inline-flex;
-  align-items: center;
-  flex: 0 0 auto;
-}
-.ticker__group span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.9rem;
-  padding-inline: 0.9rem;
-}
-.ticker__group span::after {
-  content: "";
-  width: 5px;
-  height: 5px;
-  background: #5D4432;
-  border-radius: 50%;
-  flex: 0 0 auto;
-}
-.ticker strong {
-  color: #FFFDF9;
-  font-weight: 600;
-}
-
 .header {
   position: sticky;
   top: 0;
