@@ -1,14 +1,18 @@
 // =====================================================
 // MAIN — Manaba
-// Archivo principal: importa todos los partials en orden
+// Sistema de diseño premium · minimalista y editorial
 // =====================================================
 
 @use 'variables' as *;
 @use 'mixins' as *;
 @use 'base';
+@use 'uikit';
+@use 'ticker';
 @use 'header';
 @use 'hero';
 @use 'destacados';
+@use 'marquee';
+@use 'split';
 @use 'paginas';
 @use 'forms';
 @use 'reveal';

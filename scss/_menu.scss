@@ -1,21 +1,43 @@
+// =====================================================
+// MENÚ — secciones y grillas
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// =====================================================
-// MENU - secciones y grillas
-// =====================================================
-
 .menu-seccion {
   @extend %container;
-  padding-block: $space-sm $space-lg;
+  padding-block: $space-sm $space-2xl;
+
+  &__head {
+    @extend %container;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $space-md;
+    padding-inline: 0;
+    margin-bottom: $space-lg;
+    padding-bottom: $space-sm;
+    border-bottom: 1px solid $borde;
+  }
 
   &__eyebrow {
     @extend %eyebrow;
+    display: inline-flex;
+    margin-bottom: 0.4rem;
   }
 
   &__title {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    margin-block: $space-xs $space-md;
+    @extend %sec-title;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  }
+
+  &__count {
+    font-family: $font-display;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: $terracota;
+    flex: 0 0 auto;
   }
 
   &__grid {

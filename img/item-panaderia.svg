@@ -1,10 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder panadería">
-  <rect width="400" height="300" fill="#faf3ea"/>
-  <rect x="10" y="10" width="380" height="280" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
-  <path d="M138 168 h124 a26 26 0 0 1 -124 0 z" fill="#dd8a63"/>
-  <path d="M148 168 v-12 a52 52 0 0 1 104 0 v12 z" fill="#c1673c"/>
-  <path d="M150 162 h100" stroke="#dd8a63" stroke-width="3"/>
-  <path d="M176 122 l4 16 M214 122 l-4 16" stroke="#3a2e26" stroke-width="3" stroke-linecap="round"/>
-  <text x="200" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#3a2e26">Panadería</text>
-  <text x="200" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Panadería de la mañana — medialuna y pan">
+  <rect width="400" height="300" fill="#F9F7F5"/>
+  <circle cx="352" cy="58" r="76" fill="#E9E3DD"/>
+  <ellipse cx="210" cy="238" rx="136" ry="20" fill="#3E2B1E" opacity="0.08"/>
+  <rect x="56" y="196" width="288" height="92" rx="20" fill="#fffdf9" stroke="#E3D9CC" stroke-width="2.5"/>
+  <g opacity="0.5">
+    <circle cx="90" cy="232" r="3" fill="#6F543E"/>
+    <circle cx="120" cy="216" r="3" fill="#6F543E"/>
+    <circle cx="150" cy="232" r="3" fill="#6F543E"/>
+    <circle cx="180" cy="216" r="3" fill="#6F543E"/>
+    <circle cx="210" cy="232" r="3" fill="#6F543E"/>
+  </g>
+  <path d="M168 118 q-34 -18 -46 8 q-12 28 24 30 q18 46 46 34 q52 -4 40 -34 q-46 -8 -42 -34 Z" fill="#CC9E6E" stroke="#BC8B5C" stroke-width="2.5"/>
+  <path d="M178 146 q14 8 30 2" stroke="#BC8B5C" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M168 118 q6 20 -4 26" stroke="#BC8B5C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M282 128 q-26 -2 -34 12 q-8 14 4 26 q-6 12 6 16 l28 52 q8 14 26 8 l12 -22 q-30 -22 -24 -50 q2 -20 -18 -42 Z" fill="#A77D52"/>
+  <path d="M296 154 q-14 6 -18 -2 q-2 -10 8 -14" stroke="#8A6D55" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M288 180 q-10 4 -16 -2" stroke="#8A6D55" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M78 96 q-5 -12 0 -22" stroke="#A8967F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M92 98 q-5 -12 0 -22" stroke="#8A6D55" stroke-width="4" fill="none" stroke-linecap="round"/>
 </svg>

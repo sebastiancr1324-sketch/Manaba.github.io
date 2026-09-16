@@ -1,13 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder local">
-  <rect width="400" height="300" fill="#faf3ea"/>
-  <rect x="10" y="10" width="380" height="280" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
-  <path d="M58 88 h284 v22 a12 12 0 0 1 -12 12 h-260 a12 12 0 0 1 -12 -12 z" fill="#c1673c"/>
-  <rect x="58" y="118" width="96" height="152" rx="6" fill="#3a2e26"/>
-  <circle cx="138" cy="200" r="7" fill="#dd8a63"/>
-  <rect x="184" y="118" width="158" height="104" rx="6" fill="#7a8b6f" opacity="0.35"/>
-  <path d="M263 118 v104 M184 170 h158" stroke="#fffdf9" stroke-width="3"/>
-  <rect x="184" y="222" width="158" height="18" fill="#dd8a63"/>
-  <rect x="60" y="272" width="280" height="7" rx="3" fill="#7a6a5c" opacity="0.4"/>
-  <text x="200" y="256" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#3a2e26">El local</text>
-  <text x="200" y="274" text-anchor="middle" font-family="sans-serif" font-size="10" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Interior del café Manaba — mesas y cálida luz">
+  <rect width="800" height="600" fill="#f1e6d3"/>
+  <path d="M140 40 h420 a36 36 0 0 1 36 36 v150 h-492 v-150 a36 36 0 0 1 36 -36 Z" fill="#faf3ea" stroke="#e2d3bd" stroke-width="4"/>
+  <line x1="140" y1="78" x2="596" y2="78" stroke="#e2d3bd" stroke-width="3"/>
+  <circle cx="688" cy="100" r="34" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+  <circle cx="688" cy="100" r="18" fill="none" stroke="#e2d3bd" stroke-width="3"/>
+  <rect x="720" y="96" width="80" height="8" rx="4" fill="#e2d3bd"/>
+  <rect x="720" y="126" width="80" height="8" rx="4" fill="#e2d3bd"/>
+  <g transform="translate(420 120)">
+    <path d="M-16 -40 q0 -14 16 -14 q16 0 16 14 v90 q0 40 -32 40 q-32 0 -32 -40 Z" fill="#9aa88f"/>
+    <path d="M-16 -40 q-10 -7 -20 -4 q-4 10 6 13 q-8 4 -4 14 q7 6 12 -1 Z" fill="#7a8b6f"/>
+    <path d="M16 -40 q10 -7 20 -4 q4 10 -6 13 q8 4 4 14 q-7 6 -12 -1 Z" fill="#7a8b6f"/>
+    <ellipse cx="0" cy="-92" rx="40" ry="24" fill="#7a8b6f"/>
+  </g>
+  <rect y="382" width="800" height="218" fill="#fffdf9"/>
+  <rect y="382" width="800" height="20" fill="#d8b48f"/>
+  <ellipse cx="400" cy="428" rx="330" ry="30" fill="#382c24" opacity="0.07"/>
+  <rect x="330" y="420" width="180" height="14" rx="7" fill="#382c24"/>
+  <rect x="70" y="462" width="220" height="10" rx="5" fill="#e2d3bd"/>
+  <rect x="120" y="490" width="160" height="10" rx="5" fill="#e2d3bd"/>
+  <ellipse cx="560" cy="478" rx="74" ry="40" fill="#f1e6d3" stroke="#e2d3bd" stroke-width="3"/>
+  <path d="M520 488 q14 20 40 20 q26 0 40 -20 q-8 34 -40 34 q-32 0 -40 -34 Z" fill="#9aa88f"/>
+  <g transform="translate(618 428) rotate(18)">
+    <path d="M0 0 q12 -22 38 -24 q-3 22 -22 26 Z" fill="#7a8b6f"/>
+  </g>
+  <path d="M180 396 q-5 -11 0 -22" stroke="#7a8b6f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M196 398 q-5 -11 0 -22" stroke="#9aa88f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <rect x="622" y="540" width="104" height="40" rx="8" fill="#f1e6d3" stroke="#e2d3bd" stroke-width="3"/>
+  <text x="674" y="566" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#382c24" letter-spacing="2">MANABA</text>
 </svg>

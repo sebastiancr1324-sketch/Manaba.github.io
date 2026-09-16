@@ -1,15 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Interior del café Manaba">
-  <rect width="800" height="1000" fill="#faf3ea"/>
-  <rect x="40" y="40" width="720" height="920" rx="28" fill="#fffdf9" stroke="#e5d9c8" stroke-width="3"/>
-  <path d="M90 236 h620 v44 a22 22 0 0 1 -22 22 h-576 a22 22 0 0 1 -22 -22 z" fill="#c1673c"/>
-  <rect x="76" y="302" width="648" height="160" rx="12" fill="#faf3ea" stroke="#e5d9c8" stroke-width="3"/>
-  <rect x="76" y="302" width="648" height="36" fill="#7a8b6f"/>
-  <path d="M240 526 a84 84 0 1 0 168 0 a84 84 0 1 0 -168 0" fill="#7a8b6f" opacity="0.25"/>
-  <path d="M400 470 v44 a22 22 0 0 1 -22 22 h-46 a22 22 0 0 1 -22 -22 z" fill="#c1673c"/>
-  <path d="M332 496 h-14 a14 14 0 0 0 0 28 h14" fill="none" stroke="#c1673c" stroke-width="7" stroke-linecap="round"/>
-  <rect x="470" y="520" width="120" height="16" rx="8" fill="#3a2e26"/>
-  <rect x="470" y="560" width="150" height="16" rx="8" fill="#7a6a5c" opacity="0.6"/>
-  <text x="220" y="650" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#3a2e26">Manaba</text>
-  <text x="220" y="706" text-anchor="middle" font-family="sans-serif" font-size="28" letter-spacing="5" fill="#c1673c">CAFÉ DE BARRIO</text>
-  <text x="400" y="880" text-anchor="middle" font-family="sans-serif" font-size="26" letter-spacing="4" fill="#7a6a5c">PLACEHOLDER HERO</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Interior de Manaba — barra de café y brunch">
+  <rect width="800" height="1000" fill="#f1e6d3"/>
+  <path d="M120 60 h560 a60 60 0 0 1 60 60 v560 a60 60 0 0 1 -60 60 h-560 a60 60 0 0 1 -60 -60 v-560 a60 60 0 0 1 60 -60 Z" fill="#faf3ea" stroke="#e2d3bd" stroke-width="4"/>
+  <rect x="120" y="60" width="560" height="560" rx="60" fill="#f1e6d3"/>
+  <path d="M280 120 h240 a30 30 0 0 1 30 30 v60 h-300 v-60 a30 30 0 0 1 30 -30 Z" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+  <line x1="280" y1="150" x2="550" y2="150" stroke="#e2d3bd" stroke-width="3"/>
+  <path d="M300 300 q-6 -14 0 -28" stroke="#7a8b6f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M318 296 q-6 -14 0 -28" stroke="#9aa88f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="160" cy="180" r="26" fill="#faf3ea" stroke="#e2d3bd" stroke-width="4"/>
+  <circle cx="640" cy="180" r="26" fill="#faf3ea" stroke="#e2d3bd" stroke-width="4"/>
+  <g transform="translate(400 300)">
+    <path d="M-24 -120 q0 -18 24 -18 q24 0 24 18 v130 q0 60 -48 60 q-48 0 -48 -60 Z" fill="#9aa88f"/>
+    <path d="M-24 -120 q-14 -10 -28 -6 q-6 14 8 18 q-12 6 -6 20 q10 8 18 -2 Z" fill="#7a8b6f"/>
+    <path d="M24 -120 q14 -10 28 -6 q6 14 -8 18 q12 6 6 20 q-10 8 -18 -2 Z" fill="#7a8b6f"/>
+    <ellipse cx="0" cy="-200" rx="60" ry="34" fill="#7a8b6f"/>
+    <path d="M0 -166 v-34" stroke="#5d6d55" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <rect x="0" y="620" width="800" height="380" fill="#fffdf9"/>
+  <rect x="0" y="620" width="800" height="26" fill="#d8b48f"/>
+  <rect x="0" y="918" width="800" height="82" fill="#382c24"/>
+  <path d="M80 646 h640 a26 26 0 0 1 26 26 v198 h-692 v-198 a26 26 0 0 1 26 -26 Z" fill="#f1e6d3"/>
+  <path d="M160 700 a58 58 0 0 1 116 0 v170 h-116 Z" fill="#382c24"/>
+  <rect x="196" y="656" width="44" height="60" rx="10" fill="#b95f38"/>
+  <path d="M206 712 l20 -34 M196 728 l40 -30 M238 712 l20 34" stroke="#fffdf9" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <ellipse cx="360" cy="788" rx="150" ry="24" fill="#382c24" opacity="0.08"/>
+  <ellipse cx="360" cy="780" rx="140" ry="22" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+  <path d="M268 660 L268 734 A92 52 0 0 0 452 734 L452 660 Z" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+  <ellipse cx="360" cy="664" rx="86" ry="16" fill="#382c24"/>
+  <path d="M336 662 q10 -14 24 -14 q14 0 24 14 q-12 28 -24 28 q-12 0 -24 -28 Z" fill="#f1e6d3"/>
+  <path d="M452 682 h34 a20 20 0 0 1 0 40 h-34" fill="none" stroke="#e2d3bd" stroke-width="8"/>
+  <path d="M316 610 q-8 -18 0 -36" stroke="#7a8b6f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M346 612 q-8 -18 0 -36" stroke="#9aa88f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="566" cy="740" rx="80" ry="80" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+  <path d="M526 760 l26 44 q4 8 12 8 l34 0 q8 0 12 -8 l26 -44" fill="#94472a"/>
+  <path d="M566 812 q-18 0 -18 -14 l8 -34 q10 -12 20 -12 q10 0 20 12 l8 34 q0 14 -18 14 Z" fill="#d8b48f"/>
+  <g transform="translate(170 830) rotate(20)">
+    <ellipse cx="0" cy="0" rx="16" ry="11" fill="#382c24"/>
+    <path d="M0 -11 L0 11" stroke="#faf3ea" stroke-width="2.4"/>
+  </g>
+  <g transform="translate(650 850) rotate(-14)">
+    <ellipse cx="0" cy="0" rx="14" ry="10" fill="#94472a"/>
+    <path d="M0 -10 L0 10" stroke="#faf3ea" stroke-width="2.4"/>
+  </g>
 </svg>

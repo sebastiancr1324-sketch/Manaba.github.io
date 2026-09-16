@@ -1,33 +1,92 @@
 // =====================================================
-// VARIABLES — Manaba
-// Paleta cálida: crema + terracota + verde salvia
+// VARIABLES — Manaba · Sistema de diseño "Cafe"
+// Paleta cálida de café: marrones sobre crema, mínima y limpia
 // =====================================================
 
-// Colores
-$crema: #faf3ea;        // fondo general
-$blanco-calido: #fffdf9; // superficie (cards, header)
-$terracota: #c1673c;    // acento primario
-$terracota-suave: #dd8a63; // hover/brillo
-$salvia: #7a8b6f;       // acento secundario
-$marron: #3a2e26;       // texto principal
-$marron-suave: #7a6a5c; // texto secundario/muted
-$borde: #e5d9c8;        // bordes/divisores
+// -----------------------------------------------------
+// Colores — tokens oficiales del skill Cafe
+// -----------------------------------------------------
+$surface: #F9F7F5;       // fondo general (neutral / surface)
+$surface-suave: #FFFDF9; // superficie elevada (cards, inputs)
+$secondary: #E9E3DD;     // bandas alternas, marcos (secondary)
+$primary: #5D4432;       // acento principal — café (primary)
+$primary-hover: #6F543E; // hover / brillo
+$primary-press: #463224; // press / estados activos
+$on-primary: #FBF8F4;    // texto sobre primary
+$primary-claro: #D9BFA2;  // acento café claro — texto sobre fondos oscuros (AA)
+$text: #3E2B1E;          // texto principal (text)
+$text-suave: #6C5B4A;    // texto secundario / muted (AA)
+$text-inverse: #F2EDE4;  // texto sobre secciones oscuras
+$dark: #2E2118;          // casi-negro café — secciones oscuras
+$dark-suave: #3E2D21;    // superficie oscura elevada
+$dark-line: rgba(255, 253, 249, 0.14); // hairline sobre oscuro
+$accent-suave: #8A6D55;  // acento secundario — caramelo
 
-// Tipografías
-$font-display: 'Fraunces', serif;   // titulos, editorial/calido
-$font-body: 'Nunito', sans-serif;   // texto general
+// Colores de estado (skill Cafe)
+$success: #16A34A;
+$warning: #D97706;
+$danger: #DC2626;
 
-// Espaciados
-$space-xs: 0.5rem;
-$space-sm: 1rem;
-$space-md: 2rem;
-$space-lg: 4rem;
-$space-xl: 6rem;
+// Bordes y hairlines sobre claro
+$borde: #E3D9CC;
 
-// Bordes
-$radius-sm: 8px;
-$radius-md: 16px;
+// -----------------------------------------------------
+// Aliases del sistema anterior (mapeo semántico)
+// -----------------------------------------------------
+$crema: $surface;            // fondo general
+$blanco-calido: $surface-suave; // superficie elevada
+$arena: $secondary;          // bandas alternas, marcos
+$terracota: $primary;        // acento primario — café
+$terracota-suave: $primary-hover; // hover / brillo
+$terracota-oscura: $primary-press; // press
+$salvia: $accent-suave;      // acento secundario
+$espresso: $dark;            // secciones oscuras
+$espresso-suave: $dark-suave; // superficie oscura elevada
+$marron: $text;              // texto principal
+$marron-suave: $text-suave;  // texto secundario
+$borde-oscuro: $dark-line;   // hairline sobre oscuro
 
+// Sombras tintadas (nunca negro puro)
+$shadow-sm: 0 1px 2px rgba(62, 43, 30, 0.05), 0 8px 20px -12px rgba(62, 43, 30, 0.14);
+$shadow-md: 0 2px 4px rgba(62, 43, 30, 0.05), 0 24px 40px -16px rgba(46, 33, 24, 0.25);
+$shadow-panel: 0 40px 80px -28px rgba(46, 33, 24, 0.5);
+
+// -----------------------------------------------------
+// Tipografías — Poppins + JetBrains Mono (skill Cafe)
+// -----------------------------------------------------
+$font-display: 'Poppins', 'Segoe UI', sans-serif;
+$font-body: 'Poppins', 'Segoe UI', sans-serif;
+$font-mono: 'JetBrains Mono', 'Cascadia Mono', monospace;
+
+// -----------------------------------------------------
+// Espaciado (escala 8px — 2/4/8/12/16/24/32/48)
+// -----------------------------------------------------
+$space-xs: 0.5rem;   // 8
+$space-sm: 0.75rem;  // 12
+$space-md: 1.5rem;   // 24
+$space-lg: 2rem;     // 32
+$space-xl: 3rem;     // 48
+$space-2xl: 4.5rem;  // 72
+
+// -----------------------------------------------------
+// Radios (skill Cafe)
+// -----------------------------------------------------
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-pill: 999px;
+
+// -----------------------------------------------------
+// Z-index
+// -----------------------------------------------------
+$z-ticker: 90;
+$z-header: 100;
+$z-banner: 200;
+
+// -----------------------------------------------------
 // Breakpoints
+// -----------------------------------------------------
 $bp-tablet: 768px;
-$bp-desktop: 1100px;
+$bp-desktop: 1024px;
+$bp-header: 1240px;
+$bp-wide: 1280px;

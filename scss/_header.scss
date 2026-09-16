@@ -1,40 +1,94 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-
 // =====================================================
 // HEADER / NAV
 // =====================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba($crema, 0.92);
-  backdrop-filter: blur(10px);
+  z-index: $z-header;
+  background: rgba($crema, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid $borde;
 
   &__inner {
     @extend %container;
     @include flex(row, center, space-between);
-    padding-block: $space-sm;
+    padding-block: 0.9rem;
+    gap: $space-md;
   }
 
   &__logo {
+    @extend %focus-ring;
+    @include flex(row, center, flex-start, 0.8rem);
+    flex: 0 0 auto;
+  }
+
+  &__logo-mark {
+    @include flex(row, center, center);
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: $arena;
+    border: 1px solid $borde;
+    color: $terracota;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__logo-text {
     font-family: $font-display;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
     color: $marron;
+    display: block;
+  }
+
+  &__logo-sub {
+    display: block;
+    font-family: $font-mono;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $marron-suave;
+    margin-top: 0.3rem;
   }
 
   &__toggle {
+    @include flex(column, center, center, 4px);
     background: none;
     border: 1px solid $borde;
-    border-radius: $radius-sm;
+    border-radius: $radius-pill;
+    padding: 0.7rem 0.85rem;
     color: $marron;
-    padding: 0.4rem 0.6rem;
-    font-size: 1.1rem;
 
-    @include respond-tablet {
+    span {
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      @include ease(transform 0.25s ease, opacity 0.25s ease);
+    }
+
+    &[aria-expanded='true'] {
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+    }
+
+    @media (min-width: $bp-header) {
       display: none;
     }
   }
@@ -43,57 +97,93 @@
     display: none;
 
     &.is-open {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.4rem;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
-      background: $blanco-calido;
+      background: rgba($blanco-calido, 0.97);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid $borde;
-      padding: $space-sm;
+      padding: $space-sm clamp(1.25rem, 4vw, 2.5rem) $space-md;
+      box-shadow: $shadow-md;
 
       ul {
         flex-direction: column;
-        align-items: flex-start;
-        gap: $space-sm;
+        align-items: stretch;
+        gap: 0;
+        margin-bottom: $space-sm;
+      }
+
+      .header__cta {
+        display: flex;
+        justify-content: center;
       }
     }
 
-    @include respond-tablet {
-      display: block;
-      position: static;
-      background: none;
-      border: none;
-      padding: 0;
+    @media (min-width: $bp-header) {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 1.6vw, 2rem);
+
+      .header__cta {
+        display: inline-flex;
+      }
     }
 
     ul {
-      @include flex(row, center, center, $space-md);
+      @include flex(row, center, center, clamp(1.4rem, 1.7vw, 2.25rem));
     }
 
-    a {
+    a:not(.btn) {
       font-family: $font-body;
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-weight: 600;
+      font-size: 0.76rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      white-space: nowrap;
       text-decoration: none;
+      color: $marron;
       position: relative;
-      padding-bottom: 4px;
+      padding-block: 0.35rem;
+      @include ease(color 0.2s ease);
 
       &::after {
         content: '';
         position: absolute;
         left: 0;
+        right: 0;
         bottom: 0;
-        width: 0;
         height: 2px;
         background: $terracota;
-        transition: width 0.25s ease;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        @include ease(transform 0.25s ease);
       }
 
-      &:hover::after,
-      &[aria-current='page']::after {
-        width: 100%;
+      &:hover {
+        color: $terracota;
+
+        &::after {
+          transform: scaleX(1);
+        }
       }
+
+      &[aria-current='page'] {
+        color: $terracota;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    .header__cta {
+      padding: 0.75rem 1.4rem;
     }
   }
 }

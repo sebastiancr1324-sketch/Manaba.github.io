@@ -1,13 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Panqueques con frutos rojos">
-  <rect width="400" height="300" fill="#faf3ea"/>
-  <rect x="8" y="8" width="384" height="284" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
-  <ellipse cx="200" cy="205" rx="120" ry="30" fill="#faf3ea" stroke="#e5d9c8" stroke-width="2"/>
-  <rect x="110" y="120" width="180" height="18" rx="9" fill="#dd8a63"/>
-  <rect x="104" y="150" width="196" height="18" rx="9" fill="#dd8a63"/>
-  <rect x="112" y="180" width="184" height="18" rx="9" fill="#dd8a63"/>
-  <circle cx="150" cy="112" r="9" fill="#c1673c"/>
-  <circle cx="196" cy="102" r="10" fill="#7a8b6f"/>
-  <circle cx="244" cy="114" r="9" fill="#c1673c"/>
-  <circle cx="300" cy="112" r="8" fill="#7a8b6f"/>
-  <text x="200" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Panqueques con frutos rojos y miel">
+  <rect width="800" height="600" fill="#faf3ea"/>
+  <circle cx="672" cy="120" r="108" fill="#f1e6d3"/>
+  <circle cx="672" cy="120" r="76" fill="none" stroke="#e2d3bd" stroke-width="3"/>
+  <ellipse cx="120" cy="120" rx="60" ry="60" fill="#fffdf9" opacity="0.8"/>
+  <rect y="452" width="800" height="148" fill="#fffdf9"/>
+  <line x1="0" y1="452" x2="800" y2="452" stroke="#e2d3bd" stroke-width="3"/>
+  <ellipse cx="340" cy="452" rx="290" ry="24" fill="#382c24" opacity="0.08"/>
+  <ellipse cx="300" cy="452" rx="230" ry="44" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+  <g transform="translate(160 250)">
+    <ellipse cx="0" cy="190" rx="170" ry="22" fill="#382c24" opacity="0.08"/>
+    <ellipse cx="0" cy="140" rx="176" ry="70" fill="#d8b48f" stroke="#c8a077" stroke-width="5"/>
+    <ellipse cx="0" cy="108" rx="164" ry="64" fill="#e8cda8" stroke="#d8b48f" stroke-width="5"/>
+    <ellipse cx="0" cy="76" rx="150" ry="58" fill="#f3e3cd" stroke="#e8cda8" stroke-width="5"/>
+    <ellipse cx="0" cy="52" rx="132" ry="40" fill="#fffaf0" stroke="#e8cda8" stroke-width="4"/>
+    <path d="M-40 24 q20 -14 40 6 q20 -20 40 -6 q8 10 -6 16 l-68 6 Z" fill="#d1805a"/>
+    <path d="M-84 96 q-8 -14 -26 -12 q-4 14 8 20 Z" fill="#94472a"/>
+    <path d="M96 92 q-8 -14 -26 -12 q-4 14 8 20 Z" fill="#7a8b6f"/>
+    <circle cx="-16" cy="124" r="12" fill="#94472a"/>
+    <circle cx="34" cy="96" r="13" fill="#b95f38"/>
+    <circle cx="-60" cy="72" r="11" fill="#94472a"/>
+    <circle cx="72" cy="56" r="10" fill="#d1805a"/>
+  </g>
+  <g transform="translate(600 330)">
+    <ellipse cx="0" cy="70" rx="80" ry="12" fill="#382c24" opacity="0.08"/>
+    <path d="M-52 0 L-52 48 A52 26 0 0 0 52 48 L52 0 Z" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+    <rect x="-40" y="8" width="30" height="18" rx="4" fill="#f1e6d3"/>
+    <path d="M52 14 h16 a10 10 0 0 1 0 20 h-16" fill="none" stroke="#e2d3bd" stroke-width="6"/>
+    <path d="M-24 -26 q-5 -11 0 -22" stroke="#7a8b6f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M0 -24 q-5 -11 0 -22" stroke="#9aa88f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(120 330)">
+    <path d="M0 0 q10 -18 32 -20 q-2 18 -18 22 Z" fill="#7a8b6f"/>
+    <path d="M28 4 q10 -18 32 -20 q-2 18 -18 22 Z" fill="#9aa88f"/>
+  </g>
 </svg>

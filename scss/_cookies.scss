@@ -1,34 +1,40 @@
+// =====================================================
+// BANNER DE COOKIES — tarjeta flotante
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
-
-// =====================================================
-// BANNER DE COOKIES
-// =====================================================
 
 .cookies-banner {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 200;
-  background: $blanco-calido;
-  border-top: 1px solid $borde;
-  box-shadow: 0 -8px 24px rgba($marron, 0.08);
-  padding-block: $space-sm;
+  bottom: 1rem;
+  z-index: $z-banner;
+  padding-inline: 1.25rem;
+  pointer-events: none;
 
   &__inner {
-    @extend %container;
+    pointer-events: auto;
+    max-width: 1000px;
+    margin-inline: auto;
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    box-shadow: $shadow-panel;
+    padding: 1.25rem 1.5rem;
     @include flex(row, center, space-between, $space-md);
     flex-wrap: wrap;
   }
 
   p {
-    flex: 1 1 320px;
+    flex: 1 1 340px;
     color: $marron-suave;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 
     a {
       color: $terracota;
+      border-bottom: 1px solid rgba($terracota, 0.4);
     }
   }
 
@@ -38,7 +44,7 @@
   }
 
   .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.65rem 1.3rem;
+    font-size: 0.72rem;
   }
 }

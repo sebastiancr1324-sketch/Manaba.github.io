@@ -1,13 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder granos">
-  <rect width="400" height="300" fill="#faf3ea"/>
-  <rect x="10" y="10" width="380" height="280" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
-  <rect x="148" y="116" width="104" height="92" rx="10" fill="#7a8b6f"/>
-  <rect x="148" y="110" width="104" height="18" rx="6" fill="#3a2e26"/>
-  <rect x="192" y="150" width="16" height="22" rx="3" fill="#faf3ea"/>
-  <ellipse cx="168" cy="232" rx="28" ry="8" fill="#faf3ea" stroke="#e5d9c8" stroke-width="2"/>
-  <ellipse cx="238" cy="228" rx="24" ry="8" fill="#faf3ea" stroke="#e5d9c8" stroke-width="2"/>
-  <ellipse cx="262" cy="180" rx="14" ry="6" fill="#c1673c" transform="rotate(24 262 180)"/>
-  <ellipse cx="136" cy="192" rx="12" ry="5" fill="#dd8a63" transform="rotate(-18 136 192)"/>
-  <text x="200" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#3a2e26">Granos</text>
-  <text x="200" y="288" text-anchor="middle" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Granos de café envasados">
+  <rect width="400" height="300" fill="#F9F7F5"/>
+  <circle cx="56" cy="56" r="70" fill="#E9E3DD"/>
+  <circle cx="56" cy="56" r="48" fill="none" stroke="#E3D9CC" stroke-width="2"/>
+  <ellipse cx="210" cy="238" rx="128" ry="18" fill="#3E2B1E" opacity="0.08"/>
+  <path d="M150 90 h100 q10 0 10 10 v132 q0 10 -10 10 h-100 q-10 0 -10 -10 v-132 q0 -10 10 -10 Z" fill="#fffdf9" stroke="#E3D9CC" stroke-width="2.5"/>
+  <path d="M150 90 h100 l-14 -22 q-4 -6 -10 -6 h-52 q-6 0 -10 6 Z" fill="#E9E3DD" stroke="#E3D9CC" stroke-width="2.5"/>
+  <rect x="160" y="140" width="80" height="52" rx="6" fill="#5D4432"/>
+  <path d="M160 140 h80 v12 q-40 4 -80 0 Z" fill="#463224"/>
+  <text x="200" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fffdf9" letter-spacing="1">MANABA</text>
+  <text x="200" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" letter-spacing="2" fill="#F9F7F5" opacity="0.9">CAFÉ DE ESPECIALIDAD</text>
+  <g transform="translate(284 212) rotate(22)">
+    <ellipse cx="0" cy="0" rx="14" ry="9" fill="#3E2B1E"/>
+    <path d="M0 -9 L0 9" stroke="#F9F7F5" stroke-width="1.8"/>
+  </g>
+  <g transform="translate(116 222) rotate(-16)">
+    <ellipse cx="0" cy="0" rx="12" ry="8" fill="#463224"/>
+    <path d="M0 -8 L0 8" stroke="#F9F7F5" stroke-width="1.8"/>
+  </g>
+  <g transform="translate(138 196) rotate(8)">
+    <ellipse cx="0" cy="0" rx="10" ry="7" fill="#8A6D55"/>
+    <path d="M0 -7 L0 7" stroke="#F9F7F5" stroke-width="1.8"/>
+  </g>
+  <path d="M316 128 q-5 -12 0 -22" stroke="#8A6D55" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M330 130 q-5 -12 0 -22" stroke="#A8967F" stroke-width="4" fill="none" stroke-linecap="round"/>
 </svg>

@@ -9,80 +9,134 @@
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <div class="ticker__group">
+        <span>Café de especialidad</span>
+        <span>Brunch de estación</span>
+        <span>Panadería propia</span>
+        <span>Martes a domingo · <strong>8:30 a 19:00hs</strong></span>
+        <span>Palermo, CABA</span>
+        <span>Reservas por WhatsApp</span>
+      </div>
+      <div class="ticker__group">
+        <span>Café de especialidad</span>
+        <span>Brunch de estación</span>
+        <span>Panadería propia</span>
+        <span>Martes a domingo · <strong>8:30 a 19:00hs</strong></span>
+        <span>Palermo, CABA</span>
+        <span>Reservas por WhatsApp</span>
+      </div>
+    </div>
+  </div>
+
   <header class="header">
     <div class="header__inner">
-      <a href="../index.html" class="header__logo">Manaba</a>
+      <a href="../index.html" class="header__logo" aria-label="Manaba — volver al inicio">
+        <span class="header__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9h9v5a4.5 4.5 0 0 1-9 0Z"/>
+            <path d="M15 10.5h1.2a2.3 2.3 0 0 1 0 4.6H15"/>
+            <path d="M10.5 7V5.8M13.5 7V5.8"/>
+          </svg>
+        </span>
+        <span>
+          <span class="header__logo-text">Manaba</span>
+          <span class="header__logo-sub">Café de especialidad</span>
+        </span>
+      </a>
 
-      <button class="header__toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="header__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navPrincipal">
+        <span></span>
+        <span></span>
+      </button>
 
-      <nav class="header__nav" aria-label="Navegación principal">
+      <nav class="header__nav" id="navPrincipal" aria-label="Navegación principal">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="menu.html">Menú</a></li>
           <li><a href="reservas.html">Reservas</a></li>
-          <li><a href="galeria.html">Galería</a></li>
           <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           <li><a href="restaurantes.html">Restaurantes</a></li>
         </ul>
+        <a href="reservas.html" class="btn btn--primary header__cta">Reservar mesa</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="contenido">
     <section class="pagina-hero reveal reveal--left">
       <span class="pagina-hero__eyebrow">Nuestra historia</span>
       <h1 class="pagina-hero__title">Café de barrio, <em>con vocación</em></h1>
       <p class="pagina-hero__text">Somos un equipo que cree en el café bien hecho, la comida honesta y los lugares donde uno elige quedarse.</p>
     </section>
 
-    <section class="nosotros-intro">
+    <section class="split" aria-labelledby="tostado-title">
       <div class="reveal reveal--left">
-        <span class="nosotros-intro__eyebrow">De la semilla a la taza</span>
-        <h2 class="nosotros-intro__title">Tostamos nuestro propio café</h2>
-        <p class="nosotros-intro__text">Cada grano que servimos pasó por nuestra tostadora en lotes pequeños. Trabajamos con productores que cuidamos de conocer por nombre, y buscamos que ese trabajo se sienta en cada taza.</p>
-        <p class="nosotros-intro__text">La panadería también es nuestra: masa madre fermentada en frío, medialunas horneadas a la mañana y recetas que cambian con la estación.</p>
+        <span class="split__eyebrow">De la semilla a la taza</span>
+        <h2 class="split__title" id="tostado-title">Tostamos nuestro <em>propio café</em></h2>
+        <p class="split__text">Cada grano que servimos pasó por nuestra tostadora en lotes pequeños. Trabajamos con productores que cuidamos de conocer por nombre, y buscamos que ese trabajo se sienta en cada taza.</p>
+        <p class="split__text">La panadería también es nuestra: masa madre fermentada en frío, medialunas horneadas a la mañana y recetas que cambian con la estación.</p>
+        <div class="split__actions">
+          <a href="../pages/menu.html" class="link-arrow">Ver la carta <span class="link-arrow__icon">→</span></a>
+        </div>
       </div>
-      <div class="nosotros-intro__visual reveal reveal--right">
-        <img src="../img/nosotros-tostado.svg" alt="Tostado interno en Manaba">
-      </div>
-    </section>
-
-    <section class="nosotros-valores">
-      <div class="nosotros-valores__inner">
-        <h2 class="nosotros-valores__title">En qué creemos</h2>
-        <div class="nosotros-valores__grid reveal-stagger">
-          <div class="nosotros-valor">
-            <h3 class="nosotros-valor__title">Grano de origen</h3>
-            <p class="nosotros-valor__desc">Trabajamos directo con productores y pagamos mejor por mejor café.</p>
-          </div>
-
-          <div class="nosotros-valor">
-            <h3 class="nosotros-valor__title">Tostado propio</h3>
-            <p class="nosotros-valor__desc">Lotes pequeños, tostado reciente y calibrar cada perfil por estación.</p>
-          </div>
-
-          <div class="nosotros-valor">
-            <h3 class="nosotros-valor__title">Comunidad</h3>
-            <p class="nosotros-valor__desc">Un lugar para el barrio, donde conocerse y charlar, no solo consumir.</p>
-          </div>
-
-          <div class="nosotros-valor">
-            <h3 class="nosotros-valor__title">Sostenibilidad</h3>
-            <p class="nosotros-valor__desc">Compost, bolsas que se devuelven y proveedores locales de cercanía.</p>
-          </div>
+      <div class="split__media reveal reveal--right">
+        <figure>
+          <img src="../img/foto-nos-tostado.jpg" alt="Tostaduría propia de Manaba en lotes pequeños">
+        </figure>
+        <div class="split__card" aria-hidden="true">
+          <span>Tostado semanal</span>
+          <strong>Lotes pequeños</strong>
         </div>
       </div>
     </section>
 
-    <section class="nosotros-historia">
-      <h2 class="nosotros-historia__title">Cómo llegamos hasta acá</h2>
+    <section class="nosotros-valores" aria-labelledby="valores-title">
+      <div class="nosotros-valores__inner">
+        <div class="nosotros-valores__head">
+          <span class="nosotros-valores__eyebrow">En qué creemos</span>
+          <h2 class="nosotros-valores__title" id="valores-title">Principios que se sirven todos los días</h2>
+        </div>
+        <div class="nosotros-valores__grid reveal-stagger">
+          <article class="nosotros-valor">
+            <span class="nosotros-valor__num">01</span>
+            <h3 class="nosotros-valor__title">Grano de origen</h3>
+            <p class="nosotros-valor__desc">Trabajamos directo con productores y pagamos mejor por mejor café.</p>
+          </article>
+
+          <article class="nosotros-valor">
+            <span class="nosotros-valor__num">02</span>
+            <h3 class="nosotros-valor__title">Tostado propio</h3>
+            <p class="nosotros-valor__desc">Lotes pequeños, tostado reciente y calibrar cada perfil por estación.</p>
+          </article>
+
+          <article class="nosotros-valor">
+            <span class="nosotros-valor__num">03</span>
+            <h3 class="nosotros-valor__title">Comunidad</h3>
+            <p class="nosotros-valor__desc">Un lugar para el barrio, donde conocerse y charlar, no solo consumir.</p>
+          </article>
+
+          <article class="nosotros-valor">
+            <span class="nosotros-valor__num">04</span>
+            <h3 class="nosotros-valor__title">Sostenibilidad</h3>
+            <p class="nosotros-valor__desc">Compost, bolsas que se devuelven y proveedores locales de cercanía.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="nosotros-historia" aria-labelledby="historia-title">
+      <h2 class="nosotros-historia__title" id="historia-title">Cómo llegamos hasta acá</h2>
       <div class="nosotros-historia__grid reveal-stagger">
         <article class="hito">
           <p class="hito__anio">2021</p>
@@ -104,14 +158,57 @@
       </div>
     </section>
 
-    <section class="nosotros-equipo">
-      <div class="nosotros-equipo__visual reveal reveal--left">
-        <img src="../img/nosotros-equipo.svg" alt="El equipo de Manaba">
+    <section class="nosotros-galeria" aria-labelledby="nos-galeria-title">
+      <div class="nosotros-galeria__head">
+        <span class="nosotros-galeria__eyebrow">En imágenes</span>
+        <h2 class="nosotros-galeria__title" id="nos-galeria-title">El café, el local, el día a día</h2>
+        <p class="nosotros-galeria__texto">Cuatro postales: el tostado, el brunch, la panadería y el salón.</p>
+      </div>
+      <div class="galeria__grid reveal-stagger">
+        <figure class="item-galeria">
+          <div class="item-galeria__media">
+            <img src="../img/foto-nos-salon.jpg" alt="Interior del local de Manaba en Palermo">
+          </div>
+          <figcaption>El salón</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <div class="item-galeria__media">
+            <img src="../img/foto-nos-tostado2.jpg" alt="Tostaduría propia de Manaba en lotes pequeños">
+          </div>
+          <figcaption>El tostado</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <div class="item-galeria__media">
+            <img src="../img/foto-nos-brunch.jpg" alt="Brunch de estación de Manaba">
+          </div>
+          <figcaption>El brunch</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <div class="item-galeria__media">
+            <img src="../img/foto-destacado-3.jpg" alt="Panadería propia, fermentaciones largas y masa madre">
+          </div>
+          <figcaption>La panadería</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="split split--flip" aria-labelledby="equipo-title">
+      <div class="split__media reveal reveal--left">
+        <figure>
+          <img src="../img/nosotros-equipo.svg" alt="El equipo de Manaba detrás de la barra">
+        </figure>
+        <div class="split__card" aria-hidden="true">
+          <span>Barista & panadería</span>
+          <strong>Somos de acá</strong>
+        </div>
       </div>
       <div class="reveal reveal--right">
-        <h2 class="nosotros-equipo__title">El equipo detrás de la barra</h2>
-        <p class="nosotros-equipo__text">Somos baristas, panaderos y amantes de lo lento. Si tenés ganas de conocernos, pasá por el local o escribinos: el café se toma mejor en compañía.</p>
-        <a href="contacto.html" class="btn btn--primary">Escribinos</a>
+        <span class="split__eyebrow">Detrás de la barra</span>
+        <h2 class="split__title" id="equipo-title">El equipo que <em>le pone el cuerpo</em></h2>
+        <p class="split__text">Somos baristas, panaderos y amantes de lo lento. Si tenés ganas de conocernos, pasá por el local o escribinos: el café se toma mejor en compañía.</p>
+        <div class="split__actions">
+          <a href="contacto.html" class="btn btn--primary">Escribinos</a>
+        </div>
       </div>
     </section>
   </main>
@@ -120,22 +217,22 @@
     <div class="footer__inner">
       <div>
         <p class="footer__brand">Manaba</p>
-        <p class="footer__tagline">Café de especialidad y brunch de barrio</p>
-      </div>
-
-      <div>
-        <p class="footer__title">Horarios</p>
-        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
-      </div>
-
-      <div>
-        <p class="footer__title">Contacto</p>
-        <p class="footer__text">Palermo, CABA<br>+54 9 11 0000-0000</p>
+        <p class="footer__tagline">Café de especialidad, brunch y panadería de barrio en Palermo.</p>
         <div class="footer__social">
           <a href="#" target="_blank" rel="noopener" aria-label="Instagram de Manaba">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
           </a>
         </div>
+      </div>
+
+      <div>
+        <p class="footer__title">Visitá el café</p>
+        <p class="footer__text">Gorriti 4820, Palermo<br>+54 9 11 0000-0000<br>hola@manaba.com.ar</p>
+      </div>
+
+      <div>
+        <p class="footer__title">Horarios</p>
+        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
       </div>
 
       <div>
@@ -148,7 +245,7 @@
         </p>
       </div>
     </div>
-    <p class="footer__legal">© 2026 Manaba. Todos los derechos reservados.</p>
+    <p class="footer__legal">© 2026 Manaba · Todos los derechos reservados · Hecho en Palermo, CABA</p>
   </footer>
 
   <div class="cookies-banner" id="cookiesBanner" role="dialog" aria-label="Aviso de cookies">

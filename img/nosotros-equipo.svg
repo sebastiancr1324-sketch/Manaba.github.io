@@ -1,13 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder equipo">
-  <rect width="800" height="1000" fill="#faf3ea"/>
-  <rect x="40" y="40" width="720" height="920" rx="28" fill="#fffdf9" stroke="#e5d9c8" stroke-width="3"/>
-  <rect x="150" y="560" width="620" height="90" rx="12" fill="#dd8a63"/>
-  <circle cx="300" cy="330" r="64" fill="#7a8b6f"/>
-  <circle cx="420" cy="300" r="72" fill="#c1673c"/>
-  <circle cx="540" cy="330" r="64" fill="#7a8b6f"/>
-  <rect x="250" y="400" width="100" height="170" rx="26" fill="#7a8b6f"/>
-  <rect x="360" y="378" width="120" height="192" rx="30" fill="#c1673c"/>
-  <rect x="492" y="400" width="100" height="170" rx="26" fill="#7a8b6f"/>
-  <text x="400" y="730" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#3a2e26">Nuestro equipo</text>
-  <text x="400" y="782" text-anchor="middle" font-family="sans-serif" font-size="26" letter-spacing="4" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="El equipo de Manaba detrás de la barra">
+  <rect width="800" height="1000" fill="#E9E3DD"/>
+  <path d="M120 60 h560 a60 60 0 0 1 60 60 v560 a60 60 0 0 1 -60 60 h-560 a60 60 0 0 1 -60 -60 v-560 a60 60 0 0 1 60 -60 Z" fill="#F9F7F5" stroke="#E3D9CC" stroke-width="4"/>
+  <rect x="120" y="60" width="560" height="560" rx="60" fill="#E9E3DD"/>
+  <path d="M280 130 h240 a26 26 0 0 1 26 26 v54 h-292 v-54 a26 26 0 0 1 26 -26 Z" fill="#fffdf9" stroke="#E3D9CC" stroke-width="4"/>
+  <line x1="280" y1="164" x2="546" y2="164" stroke="#E3D9CC" stroke-width="3"/>
+  <path d="M390 210 v80" stroke="#3E2B1E" stroke-width="5" stroke-linecap="round"/>
+  <path d="M380 212 q0 -28 10 -44" stroke="#5D4432" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="390" cy="118" r="16" fill="#3E2B1E"/>
+  <rect x="0" y="640" width="800" height="360" fill="#fffdf9"/>
+  <rect x="0" y="640" width="800" height="24" fill="#C9A585"/>
+  <path d="M60 664 h680 a28 28 0 0 1 28 28 v248 h-736 v-248 a28 28 0 0 1 28 -28 Z" fill="#E9E3DD"/>
+  <g transform="translate(300 470)">
+    <ellipse cx="0" cy="290" rx="90" ry="12" fill="#3E2B1E" opacity="0.08"/>
+    <rect x="-44" y="-60" width="88" height="210" rx="44" fill="#5D4432"/>
+    <circle cx="0" cy="-92" r="46" fill="#C9A585"/>
+    <ellipse cx="0" cy="-88" rx="20" ry="7" fill="#8A6D55"/>
+    <path d="M-20 -100 q0 -8 8 -12 q8 4 8 12 q-4 8 -8 8 q-8 0 -8 -8 Z" fill="#463224"/>
+    <path d="M12 -100 q0 -8 8 -12 q8 4 8 12 q-4 8 -8 8 q-8 0 -8 -8 Z" fill="#463224"/>
+    <path d="M-10 -88 h20" stroke="#3E2B1E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-44 -40 h44 l10 40 h-64 Z" fill="#3E2B1E"/>
+    <rect x="14" y="70" width="92" height="96" rx="10" fill="#fffdf9" stroke="#E3D9CC" stroke-width="4"/>
+    <path d="M34 130 l10 -44 l20 44 l22 -32 v0 q-4 20 -14 32 Z" fill="#3E2B1E"/>
+    <path d="M30 60 q-5 -11 0 -22" stroke="#8A6D55" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(500 470)">
+    <ellipse cx="0" cy="290" rx="90" ry="12" fill="#3E2B1E" opacity="0.08"/>
+    <rect x="-44" y="-54" width="88" height="204" rx="44" fill="#8A6D55"/>
+    <circle cx="0" cy="-86" r="46" fill="#C9A585"/>
+    <ellipse cx="0" cy="-82" rx="20" ry="7" fill="#A8967F"/>
+    <path d="M-20 -94 q0 -8 8 -12 q8 4 8 12 q-4 8 -8 8 q-8 0 -8 -8 Z" fill="#463224"/>
+    <path d="M12 -94 q0 -8 8 -12 q8 4 8 12 q-4 8 -8 8 q-8 0 -8 -8 Z" fill="#463224"/>
+    <path d="M-10 -82 h20" stroke="#3E2B1E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-40 -20 h34 l-6 40 h-40 l-6 -34 Z" fill="#3E2B1E"/>
+    <g transform="translate(44 40)">
+      <ellipse cx="0" cy="44" rx="58" ry="9" fill="#3E2B1E" opacity="0.06"/>
+      <path d="M-40 0 q-16 -22 -26 4 q-10 24 22 26 q12 40 40 30 q50 -4 36 -30 q-40 -8 -34 -30 Z" fill="#C9A585" stroke="#B98D64" stroke-width="3"/>
+      <path d="M-26 22 q12 8 26 2" stroke="#B98D64" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <path d="M38 92 q-5 -11 0 -22" stroke="#A8967F" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(120 380)">
+    <path d="M0 0 q8 -14 26 -16 q-2 14 -14 18 Z" fill="#8A6D55"/>
+    <path d="M24 2 q8 -14 26 -16 q-2 14 -14 18 Z" fill="#A8967F"/>
+  </g>
+  <g transform="translate(620 360) rotate(180)">
+    <path d="M0 0 q8 -14 26 -16 q-2 14 -14 18 Z" fill="#8A6D55"/>
+  </g>
+  <rect x="0" y="940" width="800" height="60" fill="#3E2B1E"/>
+  <text x="640" y="976" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#F9F7F5" letter-spacing="3" opacity="0.9">MANABA</text>
 </svg>

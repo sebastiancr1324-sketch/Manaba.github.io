@@ -1,21 +1,33 @@
+// =====================================================
+// DESTACADOS (home) + TARJETA DE PLATO (compartida)
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// =====================================================
-// DESTACADOS (home) - preview de platos/productos
-// =====================================================
-
 .destacados {
   @extend %container;
-  padding-block: $space-lg;
+  padding-block: $space-xl $space-2xl;
+
+  &__head {
+    @extend %container;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $space-md;
+    padding-inline: 0;
+    margin-bottom: $space-lg;
+  }
 
   &__eyebrow {
     @extend %eyebrow;
+    margin-bottom: $space-sm;
   }
 
   &__title {
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    margin-block: $space-xs $space-md;
+    @extend %sec-title;
+    font-size: clamp(2rem, 4vw, 3rem);
   }
 
   &__grid {
@@ -30,48 +42,80 @@
 }
 
 .card-plato {
+  @extend %focus-ring;
   background: $blanco-calido;
   border: 1px solid $borde;
   border-radius: $radius-md;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  @include ease(transform 0.3s ease, box-shadow 0.3s ease);
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba($marron, 0.08);
+    transform: translateY(-6px);
+    box-shadow: $shadow-md;
+
+    .card-plato__media img {
+      transform: scale(1.05);
+    }
   }
 
   &__media {
+    display: block;
     aspect-ratio: 4 / 3;
-    background: $crema;
-  }
+    overflow: hidden;
+    background: $arena;
 
-  &__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include ease(transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1));
+    }
   }
 
   &__body {
-    padding: $space-sm $space-md $space-md;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.4rem 1.5rem 1.6rem;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-sm;
   }
 
   &__title {
-    font-family: $font-display;
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   &__desc {
     color: $marron-suave;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  &__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-sm;
+    padding-top: 0.2rem;
   }
 
   &__precio {
     font-family: $font-display;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: $terracota;
-    margin-top: $space-sm;
+    font-feature-settings: 'tnum' 1;
   }
 }

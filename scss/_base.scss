@@ -1,9 +1,9 @@
+// =====================================================
+// BASE — reset, tipografía y fundamentos
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
-
-// =====================================================
-// RESET & BASE
-// =====================================================
 
 * {
   margin: 0;
@@ -13,14 +13,18 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background-color: $crema;
   color: $marron;
   font-family: $font-body;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   overflow-x: hidden;
+  font-feature-settings: 'tnum' 1;
 }
 
 img {
@@ -28,50 +32,103 @@ img {
   display: block;
 }
 
+svg {
+  display: block;
+}
+
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 ul {
   list-style: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: $font-display;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: $terracota;
+  color: $surface-suave;
+}
+
+// Enlace de accesibilidad
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 500;
+  background: $espresso;
+  color: $crema;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 $radius-sm $radius-sm;
+
+  &:focus {
+    left: 1rem;
+  }
 }
 
 .container {
   @extend %container;
 }
 
-.btn {
-  @include button-base;
-
-  &--primary {
-    background: $terracota;
-    color: $blanco-calido;
-
-    &:hover {
-      background: $terracota-suave;
-    }
+// ---- Animaciones globales (marquee del sistema) ----
+@keyframes manaba-marquee {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-  &--ghost {
-    border-color: $marron;
-    color: $marron;
-
-    &:hover {
-      border-color: $terracota;
-      color: $terracota;
-    }
+@keyframes manaba-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  * {
+    animation-play-state: paused !important;
   }
 }

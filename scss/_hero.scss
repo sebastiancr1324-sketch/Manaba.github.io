@@ -1,31 +1,36 @@
+// =====================================================
+// HERO — editorial, con arco y tarjetas flotantes
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// =====================================================
-// HERO
-// =====================================================
-
 .hero {
   @extend %container;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: $space-lg;
-  padding-block: $space-lg $space-md;
+  gap: $space-xl;
+  padding-block: $space-2xl $space-lg;
 
   @include respond-desktop {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: $space-2xl;
   }
 
   &__eyebrow {
     @extend %eyebrow;
-    display: block;
-    margin-bottom: $space-sm;
+    display: flex;
+    margin-bottom: $space-md;
   }
 
   &__title {
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    margin-bottom: $space-sm;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    margin-bottom: $space-md;
 
     em {
       font-style: italic;
@@ -35,22 +40,47 @@
 
   &__text {
     color: $marron-suave;
-    max-width: 42ch;
-    margin-bottom: $space-md;
-    font-size: 1.05rem;
+    max-width: 50ch;
+    margin-bottom: $space-lg;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.75;
   }
 
   &__actions {
-    @include flex(row, center, flex-start, $space-sm);
+    @include flex(row, center, flex-start, $space-md);
     flex-wrap: wrap;
   }
 
+  // ---- Columna visual ----
   &__visual {
-    aspect-ratio: 1 / 1;
-    max-width: 560px;
+    position: relative;
+    max-width: 520px;
     margin-inline: auto;
-    border: 1px solid $borde;
+    width: 100%;
+    padding-bottom: 3rem;
+
+    @include respond-desktop {
+      max-width: 560px;
+    }
+  }
+
+  &__arch {
+    @extend %arch;
     overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid $borde;
+    background: $arena;
+    box-shadow: $shadow-md;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(249, 247, 245, 0) 55%, rgba(46, 33, 24, 0.2));
+      pointer-events: none;
+    }
 
     img {
       width: 100%;
@@ -58,21 +88,131 @@
       object-fit: cover;
     }
   }
+
+  &__ticket {
+    position: absolute;
+    left: -1.25rem;
+    bottom: 0;
+    z-index: 2;
+    background: $blanco-calido;
+    border: 1px solid $borde;
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+    padding: 1rem 1.4rem;
+    animation: manaba-float 6s ease-in-out infinite;
+
+    @include respond-tablet {
+      left: -2.5rem;
+    }
+
+    &-label {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: $marron-suave;
+      margin-bottom: 0.25rem;
+    }
+
+    strong {
+      display: block;
+      font-family: $font-display;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $marron;
+    }
+
+    &-note {
+      display: block;
+      font-size: 0.78rem;
+      color: $terracota;
+      margin-top: 0.15rem;
+    }
+  }
+
+  &__badge {
+    @include flex(column, center, center);
+    position: absolute;
+    top: 1.75rem;
+    right: -1rem;
+    z-index: 2;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: $terracota;
+    color: $blanco-calido;
+    box-shadow: $shadow-md;
+    text-align: center;
+    animation: manaba-float 7s ease-in-out infinite;
+    animation-delay: 1.2s;
+
+    @include respond-tablet {
+      right: -2rem;
+      width: 120px;
+      height: 120px;
+    }
+
+    &-text {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    &-year {
+      font-family: $font-display;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
 }
 
-// Franja de horarios/info rapida debajo del hero
+// ---- Franja de datos rápidos ----
 .info-franja {
   @extend %container;
-  @include flex(row, center, space-between, $space-md);
-  flex-wrap: wrap;
-  padding-block: $space-md;
-  border-top: 1px solid $borde;
-  border-bottom: 1px solid $borde;
-  color: $marron-suave;
-  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-block: 1px solid $borde;
+  margin-bottom: $space-2xl;
 
-  span strong {
-    color: $marron;
-    font-family: $font-display;
+  @include respond-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: $space-md $space-sm;
+    border-bottom: 1px solid $borde;
+
+    @include respond-tablet {
+      border-bottom: none;
+      border-left: 1px solid $borde;
+      padding: $space-lg $space-md;
+
+      &:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+
+    span {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: $marron-suave;
+    }
+
+    strong {
+      font-family: $font-display;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: $marron;
+    }
   }
 }

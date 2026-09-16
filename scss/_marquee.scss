@@ -1,0 +1,45 @@
+// =====================================================
+// MARQUEE — cinta editorial en Poppins itálica
+// =====================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.marquee {
+  background: $arena;
+  border-block: 1px solid $borde;
+  overflow: hidden;
+  padding-block: $space-lg;
+
+  &__track {
+    @include marquee-track(42s);
+    font-family: $font-display;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: $marron;
+    white-space: nowrap;
+  }
+
+  &__group {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      padding-inline: 1rem;
+
+      &::after {
+        content: '✦';
+        font-style: normal;
+        font-size: 0.55em;
+        color: $terracota;
+      }
+    }
+  }
+}

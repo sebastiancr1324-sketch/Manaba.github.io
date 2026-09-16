@@ -1,0 +1,151 @@
+// =====================================================
+// UI KIT — botones, enlaces con flecha, chips, tags
+// =====================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+  @extend %focus-ring;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  @include ease(transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease);
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+    @include ease(transform 0.25s ease);
+  }
+
+  &:hover svg {
+    transform: translateX(3px);
+  }
+
+  &--primary {
+    background: $terracota;
+    color: $on-primary;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      background: $terracota-suave;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active {
+      background: $terracota-oscura;
+    }
+  }
+
+  &--ghost {
+    border-color: $marron;
+    color: $marron;
+    background: transparent;
+
+    &:hover {
+      border-color: $terracota;
+      color: $terracota;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--light {
+    background: $blanco-calido;
+    color: $espresso;
+
+    &:hover {
+      background: $terracota;
+      color: $blanco-calido;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &--ghost-light {
+    border-color: rgba($blanco-calido, 0.4);
+    color: $blanco-calido;
+
+    &:hover {
+      border-color: $blanco-calido;
+      color: $blanco-calido;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Enlace con flecha dentro del texto
+.link-arrow {
+  @extend %focus-ring;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $marron;
+  border-bottom: 1px solid $borde;
+  padding-bottom: 0.2rem;
+  @include ease(color 0.2s ease, border-color 0.2s ease);
+
+  .link-arrow__icon {
+    @include ease(transform 0.25s ease);
+  }
+
+  &:hover {
+    color: $terracota;
+    border-color: $terracota;
+
+    .link-arrow__icon {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// Chip pequeño de categoría — mono caps
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $font-mono;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $marron-suave;
+  background: $arena;
+  border: 1px solid $borde;
+  border-radius: $radius-pill;
+  padding: 0.3rem 0.8rem;
+}
+
+.chip--grano {
+  color: $salvia;
+  background: transparent;
+  border-color: rgba($salvia, 0.4);
+}
+
+// Número decorativo editorial
+.num {
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $terracota;
+  font-feature-settings: 'tnum' 1;
+}

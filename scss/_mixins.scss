@@ -1,8 +1,8 @@
-@use 'variables' as *;
+// =====================================================
+// MIXINS & PLACEHOLDERS — Manaba
+// =====================================================
 
-// =====================================================
-// MIXINS
-// =====================================================
+@use 'variables' as *;
 
 @mixin flex($direction: row, $align: center, $justify: center, $gap: 0) {
   display: flex;
@@ -24,41 +24,88 @@
   }
 }
 
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  gap: $space-xs;
-  padding: 0.9rem 1.8rem;
-  border-radius: 999px;
-  font-family: $font-body;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+@mixin respond-wide {
+  @media (min-width: $bp-wide) {
+    @content;
+  }
+}
 
-  &:hover {
-    transform: translateY(-2px);
+// Transición por defecto del sistema
+@mixin ease($transitions...) {
+  transition: $transitions;
+}
+
+@mixin focus-ring($color: $terracota) {
+  outline: 2px solid $color;
+  outline-offset: 3px;
+}
+
+// Anillo de foco accesible, solo para teclado
+%focus-ring {
+  &:focus-visible {
+    outline: 2px solid $terracota;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+// Cinta animada duplicada (marquee / ticker)
+@mixin marquee-track($dur: 32s) {
+  display: flex;
+  width: max-content;
+  animation: manaba-marquee $dur linear infinite;
+  animation-play-state: running;
+
+  @media (hover: hover) {
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 }
 
 // =====================================================
-// PLACEHOLDERS (para @extend)
+// PLACEHOLDERS
 // =====================================================
 
 %container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin-inline: auto;
-  padding-inline: $space-sm;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
 
+// Etiqueta superior (eyebrow) — mono caps
 %eyebrow {
-  font-family: $font-body;
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: $terracota;
-  font-weight: 700;
+
+  &::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: $terracota;
+    flex: 0 0 auto;
+  }
+}
+
+// Título de sección
+%sec-title {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  color: $marron;
+}
+
+// Marco tipo arco (herencia gráfica del local)
+%arch {
+  border-radius: $radius-pill $radius-pill $radius-md $radius-md;
 }

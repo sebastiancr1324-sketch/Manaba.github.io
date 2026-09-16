@@ -1,51 +1,95 @@
+// =====================================================
+// GALERÍA — mosaico editorial
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// =====================================================
-// GALERIA
-// =====================================================
-
 .galeria {
   @extend %container;
-  padding-block: $space-sm $space-lg;
+  padding-block: $space-sm $space-2xl;
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $space-md;
+    gap: $space-sm;
 
     @include respond-tablet {
       grid-template-columns: repeat(2, 1fr);
     }
 
     @include respond-desktop {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: auto;
+
+      .item-galeria:nth-child(1) {
+        grid-column: span 7;
+      }
+      .item-galeria:nth-child(2) {
+        grid-column: span 5;
+        .item-galeria__media {
+          aspect-ratio: 4 / 4.4;
+        }
+      }
+      .item-galeria:nth-child(3) {
+        grid-column: span 5;
+      }
+      .item-galeria:nth-child(4) {
+        grid-column: span 7;
+      }
+      .item-galeria:nth-child(5) {
+        grid-column: span 6;
+      }
+      .item-galeria:nth-child(6) {
+        grid-column: span 6;
+      }
     }
   }
 }
 
 .item-galeria {
-  background: $blanco-calido;
-  border: 1px solid $borde;
-  border-radius: $radius-md;
+  @extend %focus-ring;
+  margin: 0;
+  position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: $radius-md;
+  border: 1px solid $borde;
+  background: $arena;
+  @include ease(transform 0.3s ease, box-shadow 0.3s ease);
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba($marron, 0.08);
+    box-shadow: $shadow-md;
+
+    img {
+      transform: scale(1.05);
+    }
   }
 
-  img {
-    width: 100%;
+  &__media {
+    display: block;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include ease(transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1));
+    }
   }
 
   figcaption {
-    padding: $space-sm;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 2.5rem 1.25rem 1rem;
+    background: linear-gradient(180deg, transparent, rgba(46, 33, 24, 0.8));
+    color: $blanco-calido;
     font-family: $font-display;
-    font-size: 0.95rem;
-    color: $marron;
+    font-size: 1.05rem;
+    font-weight: 600;
   }
 }

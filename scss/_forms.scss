@@ -1,21 +1,22 @@
+// =====================================================
+// FORMULARIOS — compartidos (contacto, reservas, mayorista)
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
-
-// =====================================================
-// FORMULARIOS compartidos (contacto, reservas, restaurantes)
-// =====================================================
 
 .formulario {
   background: $blanco-calido;
   border: 1px solid $borde;
   border-radius: $radius-md;
-  padding: $space-md;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   text-align: left;
+  box-shadow: $shadow-sm;
 
   &__row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $space-sm;
+    gap: 0 1.25rem;
 
     @include respond-tablet {
       grid-template-columns: 1fr 1fr;
@@ -23,43 +24,65 @@
   }
 
   &__field {
-    margin-bottom: $space-sm;
+    margin-bottom: $space-md;
 
     label {
       display: block;
       font-family: $font-body;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: $marron;
-      margin-bottom: 0.3rem;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: $marron-suave;
+      margin-bottom: 0.5rem;
     }
 
     input,
     textarea,
     select {
       width: 100%;
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1rem;
       font-family: $font-body;
       font-size: 0.95rem;
       color: $marron;
-      background: $blanco-calido;
+      background: $crema;
       border: 1px solid $borde;
       border-radius: $radius-sm;
-      transition: border-color 0.2s ease;
+      @include ease(border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease);
+
+      &::placeholder {
+        color: rgba($marron-suave, 0.7);
+      }
+
+      &:hover {
+        border-color: rgba($terracota, 0.5);
+      }
 
       &:focus {
         outline: none;
         border-color: $terracota;
+        background: $blanco-calido;
+        box-shadow: 0 0 0 4px rgba($terracota, 0.14);
       }
     }
 
     textarea {
       resize: vertical;
+      min-height: 8rem;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235D4432' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
     }
   }
 
   &__submit {
     width: 100%;
     justify-content: center;
+    margin-top: 0.5rem;
   }
 }

@@ -1,24 +1,46 @@
+// =====================================================
+// PÁGINAS INTERNAS — hero de página y banda CTA
+// =====================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// =====================================================
-// PAGINAS INTERNAS - intro comun y CTA
-// =====================================================
-
 .pagina-hero {
   @extend %container;
-  max-width: 900px;
-  padding-block: $space-lg $space-md;
+  max-width: 1020px;
+  padding-block: $space-xl $space-xl;
+  border-bottom: 1px solid $borde;
+  margin-bottom: $space-2xl;
+
+  &--center {
+    max-width: 780px;
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 0;
+
+    .pagina-hero__eyebrow {
+      justify-content: center;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 2.25rem;
+        height: 1px;
+        background: $terracota;
+      }
+    }
+  }
 
   &__eyebrow {
     @extend %eyebrow;
-    display: block;
-    margin-bottom: $space-sm;
+    display: inline-flex;
+    margin-bottom: $space-md;
   }
 
   &__title {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    margin-bottom: $space-sm;
+    @extend %sec-title;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    margin-bottom: $space-md;
 
     em {
       font-style: italic;
@@ -28,24 +50,76 @@
 
   &__text {
     color: $marron-suave;
-    max-width: 55ch;
+    max-width: 60ch;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.75;
+    margin-bottom: $space-md;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-start, $space-md);
+    flex-wrap: wrap;
   }
 }
 
 .cta-band {
   @extend %container;
-  text-align: center;
-  padding-block: $space-lg;
+  padding-block: $space-2xl;
 
   &__inner {
-    background: $blanco-calido;
-    border: 1px solid $borde;
-    border-radius: $radius-md;
-    padding: $space-md $space-lg;
+    position: relative;
+    overflow: hidden;
+    background: $espresso;
+    color: $blanco-calido;
+    border-radius: $radius-lg;
+    padding: clamp(2.5rem, 6vw, 5rem);
+    text-align: center;
+    box-shadow: $shadow-panel;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(93, 68, 50, 0.5), transparent 40%),
+        radial-gradient(circle at 88% 85%, rgba(138, 109, 85, 0.35), transparent 45%);
+      pointer-events: none;
+    }
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+    color: $primary-claro;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+      background: $primary-claro;
+    }
   }
 
   &__title {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    margin-bottom: $space-sm;
+    position: relative;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: $blanco-calido;
+    margin-block: $space-sm $space-sm;
+
+    em {
+      font-style: italic;
+      color: $primary-claro;
+    }
+  }
+
+  &__text {
+    position: relative;
+    color: rgba($blanco-calido, 0.75);
+    max-width: 52ch;
+    margin: 0 auto $space-lg;
+  }
+
+  &__actions {
+    position: relative;
+    @include flex(row, center, center, $space-sm);
+    flex-wrap: wrap;
   }
 }

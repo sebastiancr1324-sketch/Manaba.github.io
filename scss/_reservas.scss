@@ -1,9 +1,9 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-
 // =====================================================
 // RESERVAS
 // =====================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .reserva-grid {
   @extend %container;
@@ -11,7 +11,7 @@
   grid-template-columns: 1fr;
   gap: $space-lg;
   align-items: start;
-  padding-block: $space-sm $space-lg;
+  padding-block: $space-sm $space-2xl;
 
   @include respond-desktop {
     grid-template-columns: 1.3fr 0.7fr;
@@ -19,41 +19,68 @@
 }
 
 .reserva-info {
-  background: $blanco-calido;
-  border: 1px solid $borde;
+  background: $espresso;
+  color: $blanco-calido;
   border-radius: $radius-md;
-  padding: $space-md;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: $shadow-md;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 100% 0%, rgba(111, 84, 62, 0.45), transparent 45%);
+    pointer-events: none;
+  }
+
+  &__eyebrow {
+    @extend %eyebrow;
+    color: $primary-claro;
+    display: flex;
+    margin-bottom: $space-sm;
+
+    &::before {
+      background: $primary-claro;
+    }
+  }
 
   &__title {
-    font-family: $font-display;
-    font-size: 1.25rem;
-    margin-bottom: $space-sm;
+    position: relative;
+    font-size: 1.6rem;
+    color: $blanco-calido;
+    margin-bottom: $space-md;
   }
 
   &__item {
-    margin-bottom: $space-sm;
+    position: relative;
+    margin-bottom: $space-md;
+    padding-bottom: $space-md;
+    border-bottom: 1px solid rgba($blanco-calido, 0.12);
 
     h3 {
       font-family: $font-body;
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: $terracota;
-      margin-bottom: 0.2rem;
+      color: $primary-claro;
+      margin-bottom: 0.35rem;
     }
 
     p {
-      color: $marron-suave;
-      font-size: 0.92rem;
+      color: rgba($blanco-calido, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
   }
 
   &__politica {
+    position: relative;
     margin-top: $space-sm;
-    border-top: 1px solid $borde;
-    padding-top: $space-sm;
-    color: $marron-suave;
-    font-size: 0.82rem;
+    color: rgba($blanco-calido, 0.55);
+    font-size: 0.8rem;
+    line-height: 1.65;
   }
 }

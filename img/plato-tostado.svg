@@ -1,11 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Tostado de palta y huevo poché">
-  <rect width="400" height="300" fill="#faf3ea"/>
-  <rect x="8" y="8" width="384" height="284" rx="16" fill="#fffdf9" stroke="#e5d9c8" stroke-width="2"/>
-  <rect x="60" y="150" width="280" height="26" rx="8" fill="#dd8a63"/>
-  <ellipse cx="200" cy="150" rx="120" ry="13" fill="#7a8b6f"/>
-  <circle cx="200" cy="112" r="34" fill="#c1673c"/>
-  <circle cx="200" cy="112" r="18" fill="#dd8a63"/>
-  <path d="M164 96 q-6 -10 0 -18 M200 92 q-6 -10 0 -18 M236 96 q-6 -10 0 -18" stroke="#7a8b6f" stroke-width="4" stroke-linecap="round" fill="none"/>
-  <text x="200" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#3a2e26">Tostado de palta</text>
-  <text x="200" y="256" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#7a6a5c">PLACEHOLDER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Mesada con tostado de palta y huevo poché">
+  <rect width="800" height="600" fill="#faf3ea"/>
+  <path d="M120 60 h560 a40 40 0 0 1 40 40 v120 h-640 v-120 a40 40 0 0 1 40 -40 Z" fill="#f1e6d3"/>
+  <rect x="120" y="60" width="560" height="160" rx="40" fill="none" stroke="#e2d3bd" stroke-width="3"/>
+  <circle cx="660" cy="150" r="70" fill="#fffdf9" opacity="0.7"/>
+  <rect y="452" width="800" height="148" fill="#fffdf9"/>
+  <line x1="0" y1="452" x2="800" y2="452" stroke="#e2d3bd" stroke-width="3"/>
+  <ellipse cx="400" cy="452" rx="300" ry="26" fill="#382c24" opacity="0.08"/>
+  <ellipse cx="320" cy="452" rx="230" ry="40" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+  <g transform="translate(194 250)">
+    <path d="M0 0 q-34 -24 -44 8 q-12 32 28 34 q20 52 52 38 q60 -4 46 -38 q-52 -10 -48 -38 Z" fill="#d8b48f" stroke="#c8a077" stroke-width="4"/>
+    <path d="M-14 110 l16 -156 l268 2 l16 154 l-10 12 h-280 Z" fill="#fffdf9"/>
+    <path d="M30 40 q22 -10 46 -4" stroke="#e2d3bd" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M42 18 q32 12 72 6" stroke="#e2d3bd" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <ellipse cx="58" cy="120" rx="52" ry="16" fill="#7a8b6f"/>
+    <ellipse cx="190" cy="122" rx="46" ry="14" fill="#9aa88f"/>
+    <ellipse cx="130" cy="106" rx="64" ry="22" fill="#fffdf9" stroke="#e2d3bd" stroke-width="4"/>
+    <circle cx="130" cy="104" r="18" fill="#d1805a"/>
+    <circle cx="130" cy="104" r="8" fill="#faf3ea" opacity="0.6"/>
+  </g>
+  <g transform="translate(600 300)">
+    <ellipse cx="0" cy="96" rx="86" ry="14" fill="#382c24" opacity="0.08"/>
+    <ellipse cx="0" cy="92" rx="80" ry="14" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+    <path d="M-46 0 L-46 66 A46 26 0 0 0 46 66 L46 0 Z" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+    <ellipse cx="0" cy="6" rx="40" ry="9" fill="#382c24"/>
+    <path d="M-46 16 h20 a12 12 0 0 1 0 24 h-20" fill="none" stroke="#e2d3bd" stroke-width="7"/>
+    <path d="M-24 -34 q-6 -13 0 -26" stroke="#7a8b6f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M0 -32 q-6 -13 0 -26" stroke="#9aa88f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M24 -34 q-6 -13 0 -26" stroke="#7a8b6f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(120 330)">
+    <ellipse cx="0" cy="40" rx="34" ry="8" fill="#382c24" opacity="0.06"/>
+    <ellipse cx="0" cy="0" rx="34" ry="34" fill="#fffdf9" stroke="#e2d3bd" stroke-width="3"/>
+    <ellipse cx="0" cy="-7" rx="20" ry="8" fill="#d1805a"/>
+    <path d="M-20 -7 q4 -8 10 -12" stroke="#94472a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
 </svg>
