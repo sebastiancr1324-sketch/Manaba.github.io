@@ -49,7 +49,7 @@
   }
 }
 
-// Cinta animada duplicada (marquee / ticker)
+// Cinta animada duplicada (marquee)
 @mixin marquee-track($dur: 32s) {
   display: flex;
   width: max-content;

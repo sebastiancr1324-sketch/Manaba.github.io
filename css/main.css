@@ -5,16 +5,14 @@
   border-radius: 4px;
 }
 
-.footer__inner, .footer__legal, .rest-intro, .rest-panel, .rest-block__inner, .rest-contact, .contacto-info, .contacto-form, .nosotros-intro,
-.nosotros-equipo, .nosotros-valores__inner, .nosotros-historia, .nosotros-galeria, .galeria, .reserva-grid, .menu-seccion, .menu-seccion__head, .contenido-legal, .pagina-hero, .cta-band, .split, .destacados, .destacados__head, .hero, .info-franja, .header__inner, .container {
+.footer__inner, .footer__legal, .rest-intro, .rest-panel, .rest-block__inner, .rest-contact, .contacto-info, .contacto-form, .nosotros-valores__inner, .nosotros-historia, .nosotros-galeria, .reserva-grid, .menu-seccion, .menu-seccion__head, .contenido-legal, .pagina-hero, .cta-band, .split, .destacados, .destacados__head, .hero, .info-franja, .header__inner, .container {
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
 
-.rest-intro__eyebrow, .rest-panel__eyebrow, .rest-block__eyebrow, .rest-contact__eyebrow, .contacto-form__eyebrow, .nosotros-intro__eyebrow,
-.nosotros-equipo__eyebrow, .nosotros-valores__eyebrow, .nosotros-galeria__eyebrow, .reserva-info__eyebrow, .menu-seccion__eyebrow, .pagina-hero__eyebrow, .cta-band__eyebrow, .split__eyebrow, .destacados__eyebrow, .hero__eyebrow {
+.rest-intro__eyebrow, .rest-panel__eyebrow, .rest-block__eyebrow, .rest-contact__eyebrow, .contacto-form__eyebrow, .nosotros-valores__eyebrow, .nosotros-galeria__eyebrow, .reserva-info__eyebrow, .menu-seccion__eyebrow, .pagina-hero__eyebrow, .cta-band__eyebrow, .split__eyebrow, .destacados__eyebrow, .hero__eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -25,8 +23,7 @@
   text-transform: uppercase;
   color: #5D4432;
 }
-.rest-intro__eyebrow::before, .rest-panel__eyebrow::before, .rest-block__eyebrow::before, .rest-contact__eyebrow::before, .contacto-form__eyebrow::before, .nosotros-intro__eyebrow::before,
-.nosotros-equipo__eyebrow::before, .nosotros-valores__eyebrow::before, .nosotros-galeria__eyebrow::before, .reserva-info__eyebrow::before, .menu-seccion__eyebrow::before, .pagina-hero__eyebrow::before, .cta-band__eyebrow::before, .split__eyebrow::before, .destacados__eyebrow::before, .hero__eyebrow::before {
+.rest-intro__eyebrow::before, .rest-panel__eyebrow::before, .rest-block__eyebrow::before, .rest-contact__eyebrow::before, .contacto-form__eyebrow::before, .nosotros-valores__eyebrow::before, .nosotros-galeria__eyebrow::before, .reserva-info__eyebrow::before, .menu-seccion__eyebrow::before, .pagina-hero__eyebrow::before, .cta-band__eyebrow::before, .split__eyebrow::before, .destacados__eyebrow::before, .hero__eyebrow::before {
   content: "";
   width: 2rem;
   height: 1px;
@@ -34,8 +31,7 @@
   flex: 0 0 auto;
 }
 
-.rest-intro__title, .rest-block__title, .rest-contact__title, .contacto-form__title, .nosotros-intro__title,
-.nosotros-equipo__title, .nosotros-valores__title, .nosotros-historia__title, .nosotros-galeria__title, .menu-seccion__title, .contenido-legal h2, .pagina-hero__title, .split__title, .destacados__title {
+.rest-intro__title, .rest-block__title, .rest-contact__title, .contacto-form__title, .nosotros-valores__title, .nosotros-historia__title, .nosotros-galeria__title, .menu-seccion__title, .contenido-legal h2, .pagina-hero__title, .split__title, .destacados__title {
   font-family: "Poppins", "Segoe UI", sans-serif;
   font-weight: 600;
   line-height: 1.08;
@@ -44,8 +40,7 @@
   color: #3E2B1E;
 }
 
-.rest-intro__visual, .nosotros-intro__visual,
-.nosotros-equipo__visual, .split__media figure, .hero__arch {
+.rest-intro__visual, .split__media figure, .hero__arch {
   border-radius: 999px 999px 8px 8px;
 }
 
@@ -1390,9 +1385,6 @@ input, select, textarea {
   line-height: 1.65;
 }
 
-.galeria {
-  padding-block: 0.75rem 4.5rem;
-}
 .galeria__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1475,61 +1467,6 @@ input, select, textarea {
   font-weight: 600;
 }
 
-.nosotros-intro,
-.nosotros-equipo {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 3rem;
-  padding-block: 0.75rem 4.5rem;
-}
-@media (min-width: 1024px) {
-  .nosotros-intro,
-  .nosotros-equipo {
-    grid-template-columns: 1.05fr 0.95fr;
-  }
-}
-.nosotros-intro__eyebrow,
-.nosotros-equipo__eyebrow {
-  display: flex;
-  margin-bottom: 1.5rem;
-}
-.nosotros-intro__title,
-.nosotros-equipo__title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1.5rem;
-}
-.nosotros-intro__text,
-.nosotros-equipo__text {
-  color: #6C5B4A;
-  max-width: 58ch;
-  margin-bottom: 1.5rem;
-  font-size: 1.02rem;
-}
-.nosotros-intro__text + .nosotros-intro__text,
-.nosotros-intro__text + .nosotros-equipo__text,
-.nosotros-equipo__text + .nosotros-intro__text,
-.nosotros-equipo__text + .nosotros-equipo__text {
-  margin-top: -0.75rem;
-}
-.nosotros-intro__visual,
-.nosotros-equipo__visual {
-  max-width: 540px;
-  margin-inline: auto;
-  width: 100%;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  background: #E9E3DD;
-  border: 1px solid #E3D9CC;
-  box-shadow: 0 2px 4px rgba(62, 43, 30, 0.05), 0 24px 40px -16px rgba(46, 33, 24, 0.25);
-}
-.nosotros-intro__visual img,
-.nosotros-equipo__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .nosotros-valores {
   background: #E9E3DD;
   border-block: 1px solid #E3D9CC;
@@ -1554,8 +1491,7 @@ input, select, textarea {
 @media (min-width: 768px) {
   .nosotros-valores__grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 3rem;
+    gap: 3rem 2rem;
   }
 }
 @media (min-width: 1024px) {
@@ -1923,8 +1859,7 @@ input, select, textarea {
 @media (min-width: 768px) {
   .rest-beneficios {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
-    row-gap: 2rem;
+    gap: 2rem 3rem;
   }
 }
 

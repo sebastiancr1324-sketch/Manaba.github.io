@@ -219,8 +219,7 @@
 
   @include respond-tablet {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: $space-xl;
-    row-gap: $space-lg;
+    gap: $space-lg $space-xl;
   }
 }
 
