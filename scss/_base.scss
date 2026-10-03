@@ -14,7 +14,16 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+// Evita el scroll horizontal en celular si algún elemento decorativo
+// (tarjetas flotantes, animaciones de entrada) sobresale del borde.
+// `clip` no crea contenedor de scroll, así el header sticky sigue funcionando.
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
@@ -23,7 +32,6 @@ body {
   font-family: $font-body;
   font-size: 1rem;
   line-height: 1.7;
-  overflow-x: hidden;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -111,15 +119,9 @@ input, select, textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-html,
-body {
-  overflow-x: clip;
-}
+  html {
+    scroll-behavior: auto;
+  }
 
   *,
   *::before,

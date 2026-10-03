@@ -1,10 +1,12 @@
 // =====================================================
 // REVEAL — animaciones de aparición al scrollear
+// Solo se ocultan si hay JS (clase .js en <html>): sin JS
+// o si el script falla, el contenido se ve igual.
 // =====================================================
 
 @use 'variables' as *;
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.8s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -25,11 +27,12 @@
   &.is-visible {
     opacity: 1;
     transform: none;
+    will-change: auto;
   }
 }
 
 // Cards que entran en cascada
-.reveal-stagger {
+.js .reveal-stagger {
   & > * {
     opacity: 0;
     transform: translateY(26px);
@@ -44,6 +47,16 @@
   }
 
   &.is-visible > * {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+// Con "reducir movimiento" el contenido aparece directamente, sin desplazarse
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal-stagger > * {
     opacity: 1;
     transform: none;
   }

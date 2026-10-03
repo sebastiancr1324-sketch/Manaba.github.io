@@ -5,6 +5,7 @@
 
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'fonts';
 @use 'base';
 @use 'uikit';
 @use 'header';
@@ -16,7 +17,6 @@
 @use 'forms';
 @use 'reveal';
 @use 'legal';
-@use 'cookies';
 @use 'menu';
 @use 'reservas';
 @use 'galeria';
