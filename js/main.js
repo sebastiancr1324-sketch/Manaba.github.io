@@ -43,6 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
     elementos.forEach((el) => observador.observe(el));
   }
 
+  // Sitio de demostración: GitHub Pages no acepta envíos (responde 405),
+  // así que los formularios avisan en lugar de enviar.
+  document.querySelectorAll('form.formulario').forEach((form) => {
+    const aviso = document.createElement('p');
+    aviso.className = 'formulario__aviso';
+    aviso.setAttribute('role', 'status');
+    form.append(aviso);
+
+    form.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      aviso.textContent = '¡Gracias! Este es un sitio de demostración, así que el formulario no envía datos.';
+    });
+  });
+
   const CLAVE_COOKIES = 'manaba-cookie-consent';
   const banner = document.getElementById('cookiesBanner');
 

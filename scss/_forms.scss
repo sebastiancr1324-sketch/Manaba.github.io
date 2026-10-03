@@ -61,7 +61,7 @@
       &:focus {
         outline: none;
         border-color: $terracota;
-        background: $blanco-calido;
+        background-color: $blanco-calido; // solo el color: conserva la flecha del select
         box-shadow: 0 0 0 4px rgba($terracota, 0.14);
       }
     }
@@ -84,5 +84,15 @@
     width: 100%;
     justify-content: center;
     margin-top: 0.5rem;
+  }
+
+  &__aviso {
+    color: $marron-suave;
+    font-size: 0.9rem;
+    text-align: center;
+
+    &:not(:empty) {
+      margin-top: $space-sm;
+    }
   }
 }

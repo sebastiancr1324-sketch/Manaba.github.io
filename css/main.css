@@ -1082,7 +1082,7 @@ input, select, textarea {
 .formulario__field select:focus {
   outline: none;
   border-color: #5D4432;
-  background: #FFFDF9;
+  background-color: #FFFDF9;
   box-shadow: 0 0 0 4px rgba(93, 68, 50, 0.14);
 }
 .formulario__field textarea {
@@ -1100,6 +1100,14 @@ input, select, textarea {
   width: 100%;
   justify-content: center;
   margin-top: 0.5rem;
+}
+.formulario__aviso {
+  color: #6C5B4A;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.formulario__aviso:not(:empty) {
+  margin-top: 0.75rem;
 }
 
 .js .reveal {
