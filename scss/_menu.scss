@@ -1,56 +1,122 @@
 // =====================================================
-// MENÚ — secciones y grillas
+// MENÚ — carta tipográfica
+// Categoría (h3 Fraunces + una foto) y lista de ítems:
+// nombre · línea de puntos · precio, descripción debajo.
 // =====================================================
 
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.menu-seccion {
+.carta {
   @extend %container;
-  padding-block: $space-sm $space-2xl;
+  @extend %section;
+}
+
+.carta-seccion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+
+  & + & {
+    margin-top: var(--space-16);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--line);
+  }
+
+  @include respond-desktop {
+    grid-template-columns: 4fr 8fr;
+    gap: var(--space-16);
+
+    & + & {
+      margin-top: var(--space-24);
+      padding-top: var(--space-24);
+    }
+  }
 
   &__head {
-    @extend %container;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: $space-md;
-    padding-inline: 0;
-    margin-bottom: $space-lg;
-    padding-bottom: $space-sm;
-    border-bottom: 1px solid $borde;
+    @include respond-desktop {
+      position: sticky;
+      top: calc(var(--header-h) + var(--space-8));
+      align-self: start;
+    }
   }
 
   &__eyebrow {
     @extend %eyebrow;
-    display: inline-flex;
-    margin-bottom: 0.4rem;
+    display: flex;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    @extend %sec-title;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    @include t-h3;
+    color: var(--espresso-800);
   }
 
-  &__count {
-    font-family: $font-display;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: $terracota;
+  &__media {
+    @extend %photo;
+    aspect-ratio: 4 / 3;
+    margin-top: var(--space-6);
+    max-width: 480px;
+  }
+}
+
+.carta-lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: var(--space-8);
+
+  @include respond-desktop {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-12);
+  }
+}
+
+.carta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    align-items: last baseline;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  &__name {
+    @include t-title;
+    color: var(--espresso-800);
+    flex: 0 1 auto;
+  }
+
+  // Línea de puntos que se estira entre nombre y precio
+  &__dots {
+    flex: 1 1 auto;
+    min-width: var(--space-6);
+    height: 4px;
+    margin-bottom: 0.3em;
+    background-image: radial-gradient(circle, var(--caramel-500) 1px, transparent 1.25px);
+    background-size: 6px 4px;
+    background-repeat: repeat-x;
+    background-position: left center;
+  }
+
+  &__price {
+    @include t-numeral;
     flex: 0 0 auto;
+    color: var(--espresso-800);
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $space-md;
+  &__desc {
+    @include t-small;
+    color: var(--text-muted);
+    max-width: 36rem;
+  }
 
-    @include respond-tablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include respond-desktop {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .tag {
+    margin-top: var(--space-1);
   }
 }

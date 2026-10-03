@@ -6,17 +6,16 @@
 @use 'mixins' as *;
 
 .formulario {
-  background: $blanco-calido;
-  border: 1px solid $borde;
-  border-radius: $radius-md;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: clamp(var(--space-6), 4vw, var(--space-12));
   text-align: left;
-  box-shadow: $shadow-sm;
 
   &__row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0 1.25rem;
+    gap: 0 var(--space-6);
 
     @include respond-tablet {
       grid-template-columns: 1fr 1fr;
@@ -24,45 +23,49 @@
   }
 
   &__field {
-    margin-bottom: $space-md;
+    margin-bottom: var(--space-6);
 
     label {
       display: block;
-      font-family: $font-body;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
       font-weight: 600;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: $marron-suave;
-      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      color: var(--espresso-800);
+      margin-bottom: var(--space-2);
     }
 
     input,
     textarea,
     select {
       width: 100%;
-      padding: 0.85rem 1rem;
-      font-family: $font-body;
-      font-size: 0.95rem;
-      color: $marron;
-      background: $crema;
-      border: 1px solid $borde;
-      border-radius: $radius-sm;
-      @include ease(border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease);
+      min-height: 48px;
+      padding: var(--space-3) var(--space-4);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.4;
+      color: var(--espresso-800);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      @include ease(border-color 0.2s ease, background-color 0.2s ease);
 
       &::placeholder {
-        color: rgba($marron-suave, 0.9); // 4,8:1 sobre $crema (AA)
+        color: var(--text-muted);
       }
 
       &:hover {
-        border-color: rgba($terracota, 0.5);
+        border-color: var(--caramel-500);
       }
 
       &:focus {
-        outline: none;
-        border-color: $terracota;
-        background-color: $blanco-calido; // solo el color: conserva la flecha del select
-        box-shadow: 0 0 0 4px rgba($terracota, 0.14);
+        border-color: var(--cafe-700);
+        background: var(--surface);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--cafe-700);
+        outline-offset: 3px;
       }
     }
 
@@ -71,28 +74,34 @@
       min-height: 8rem;
     }
 
+    // Flecha del select dibujada con gradientes (sin colores fijos)
     select {
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235D4432' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      padding-right: var(--space-12);
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--cafe-700) 50%),
+        linear-gradient(135deg, var(--cafe-700) 50%, transparent 50%);
+      background-position:
+        calc(100% - 22px) 50%,
+        calc(100% - 17px) 50%;
+      background-size: 5px 5px;
       background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
     }
   }
 
   &__submit {
     width: 100%;
-    justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: var(--space-2);
   }
 
+  // Aviso del sitio de demostración (lo inserta js/main.js al enviar)
   &__aviso {
-    color: $marron-suave;
-    font-size: 0.9rem;
+    @include t-small;
+    color: var(--text-muted);
     text-align: center;
 
     &:not(:empty) {
-      margin-top: $space-sm;
+      margin-top: var(--space-4);
     }
   }
 }

@@ -5,7 +5,9 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,25 +20,20 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-// Evita el scroll horizontal en celular si algún elemento decorativo
-// (tarjetas flotantes, animaciones de entrada) sobresale del borde.
-// `clip` no crea contenedor de scroll, así el header sticky sigue funcionando.
 html,
 body {
   overflow-x: clip;
 }
 
 body {
-  background-color: $crema;
-  color: $marron;
-  font-family: $font-body;
-  font-size: 1rem;
-  line-height: 1.7;
-  font-feature-settings: 'tnum' 1;
+  @include t-body;
+  background-color: var(--bg);
+  color: var(--espresso-800);
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -54,11 +51,21 @@ ul {
 }
 
 h1, h2, h3, h4 {
-  font-family: $font-display;
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
   text-wrap: balance;
+  color: var(--espresso-800);
+}
+
+// La palabra destacada de cada título: Fraunces itálica
+h1 em,
+h2 em,
+h3 em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cafe-700);
 }
 
 p {
@@ -75,8 +82,14 @@ input, select, textarea {
 }
 
 ::selection {
-  background: $terracota;
-  color: $surface-suave;
+  background: var(--cafe-700);
+  color: var(--on-brand);
+}
+
+// Foco visible en todo elemento interactivo
+:focus-visible {
+  outline: 2px solid var(--cafe-700);
+  outline-offset: 3px;
 }
 
 // Enlace de accesibilidad
@@ -84,14 +97,14 @@ input, select, textarea {
   position: absolute;
   left: -999px;
   top: 0;
-  z-index: 500;
-  background: $espresso;
-  color: $crema;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0 0 $radius-sm $radius-sm;
+  z-index: $z-skip;
+  background: var(--espresso-900);
+  color: var(--surface);
+  padding: var(--space-3) var(--space-6);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 
   &:focus {
-    left: 1rem;
+    left: var(--space-4);
   }
 }
 
@@ -99,7 +112,12 @@ input, select, textarea {
   @extend %container;
 }
 
-// ---- Animaciones globales (marquee del sistema) ----
+// Cifras: precios y horarios
+.num {
+  @include t-numeral;
+}
+
+// ---- Animaciones globales ----
 @keyframes manaba-marquee {
   from {
     transform: translateX(0);
@@ -109,15 +127,16 @@ input, select, textarea {
   }
 }
 
-@keyframes manaba-float {
-  0%, 100% {
-    transform: translateY(0);
+@keyframes manaba-fade {
+  from {
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-10px);
+  to {
+    opacity: 1;
   }
 }
 
+// Sin movimiento: se apaga el marquee y toda animación de entrada
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -128,9 +147,5 @@ input, select, textarea {
   *::after {
     animation: none !important;
     transition: none !important;
-  }
-
-  * {
-    animation-play-state: paused !important;
   }
 }

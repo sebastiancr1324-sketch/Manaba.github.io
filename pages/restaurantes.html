@@ -27,6 +27,9 @@
   <link rel="preload" href="../fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -70,17 +73,17 @@
 
   <main id="contenido">
     <section class="rest-intro">
-      <div class="reveal reveal--left">
+      <div>
         <span class="rest-intro__eyebrow">Manaba Mayorista</span>
         <h1 class="rest-intro__title">El café que tu restaurante <em>merece</em></h1>
         <p class="rest-intro__text">Café de especialidad tostado por nosotros, con entrenamiento barista y asesoría para que el servicio de café sea parte de la experiencia de tu carta.</p>
         <div class="rest-intro__actions">
           <a href="#contacto" class="btn btn--primary">Pedir información</a>
-          <a href="#granos" class="link-arrow">Ver nuestros granos <span class="link-arrow__icon">→</span></a>
+          <a href="#granos" class="link-arrow"><span class="link-arrow__text">Ver nuestros granos</span> <span class="link-arrow__icon" aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="rest-intro__visual reveal reveal--right">
-        <img src="../img/foto-cafe-filtrado-800.webp" srcset="../img/foto-cafe-filtrado-480.webp 480w, ../img/foto-cafe-filtrado-800.webp 800w, ../img/foto-cafe-filtrado-1200.webp 1200w" sizes="(min-width: 1024px) 1050px, calc(187.5vw - 75px)" width="1200" height="800" alt="Café de especialidad preparado por filtrado en la barra">
+      <div class="rest-intro__visual">
+        <img src="../img/foto-cafe-filtrado-800.webp" srcset="../img/foto-cafe-filtrado-480.webp 480w, ../img/foto-cafe-filtrado-800.webp 800w, ../img/foto-cafe-filtrado-1200.webp 1200w" sizes="(min-width: 768px) 940px, calc(187.5vw - 60px)" fetchpriority="high" style="--focal: 60% 50%" width="1200" height="800" alt="Café de especialidad preparado por filtrado en la barra">
       </div>
     </section>
 
@@ -95,21 +98,21 @@
             <h3 class="card-grano__name">Manaba Balance</h3>
             <p class="card-grano__note">Perfil medio · notas a caramelo y frutal</p>
             <p class="card-grano__desc">El favorito de la casa. Ideal para espresso y bebidas con leche. Suave, equilibrado y accesible.</p>
-            <p class="card-grano__tag">Recomendado para brunch y cafeterías</p>
+            <p class="card-grano__tag tag">Recomendado para brunch y cafeterías</p>
           </article>
 
           <article class="card-grano">
             <h3 class="card-grano__name">Manaba Origen</h3>
             <p class="card-grano__note">Origen único · notas a cítricos y chocolate</p>
             <p class="card-grano__desc">Para quienes buscan distinguirse. Vía filtrada, impresiona a los clientes más exigentes.</p>
-            <p class="card-grano__tag">Para carta de especialidad</p>
+            <p class="card-grano__tag tag">Para carta de especialidad</p>
           </article>
 
           <article class="card-grano">
             <h3 class="card-grano__name">Manaba Intenso</h3>
             <p class="card-grano__note">Tostado medio-alto · notas a cacao y especias</p>
             <p class="card-grano__desc">Cuerpo completo y presencia. Ideal para el final de la comida: espresso o café de diseño.</p>
-            <p class="card-grano__tag">Para postre y sobremesa</p>
+            <p class="card-grano__tag tag">Para postre y sobremesa</p>
           </article>
         </div>
       </div>
@@ -180,7 +183,7 @@
         <h2 class="rest-contact__title">Contanos sobre tu restaurante</h2>
         <p class="rest-contact__text">Dejanos tus datos y un miembro de nuestro equipo te contacta para coordinar una degustación sin costo.</p>
 
-        <form class="formulario reveal reveal--bottom" action="#" method="post" aria-label="Formulario de contacto mayorista">
+        <form class="formulario reveal" action="#" method="post" aria-label="Formulario de contacto mayorista">
           <div class="formulario__row">
             <div class="formulario__field">
               <label for="nombre">Nombre</label>
@@ -217,23 +220,40 @@
   <footer class="footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand">Manaba</p>
+        <div class="footer__brand">
+          <span class="footer__brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9h9v5a4.5 4.5 0 0 1-9 0Z"/>
+              <path d="M15 10.5h1.2a2.3 2.3 0 0 1 0 4.6H15"/>
+              <path d="M10.5 7V5.8M13.5 7V5.8"/>
+            </svg>
+          </span>
+          <span>
+            <span class="footer__brand-text">Manaba</span>
+            <span class="footer__brand-sub">Café de especialidad</span>
+          </span>
+        </div>
         <p class="footer__tagline">Café de especialidad, brunch y panadería de barrio en Palermo.</p>
         <div class="footer__social">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Manaba (se abre en una pestaña nueva)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <a class="footer__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Manaba (se abre en una pestaña nueva)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
+            <span>Instagram</span>
           </a>
         </div>
       </div>
 
       <div>
         <p class="footer__title">Visitá el café</p>
-        <p class="footer__text">Gorriti 4820, Palermo<br>+54 9 11 0000-0000<br>hola@manaba.com.ar</p>
+        <p class="footer__text">Gorriti 4820, Palermo<br><span class="num">+54 9 11 0000-0000</span><br>hola@manaba.com.ar</p>
+        <a class="footer__link" href="https://www.google.com/maps/search/?api=1&amp;query=Gorriti+4820%2C+Palermo%2C+CABA" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar (se abre Google Maps en una pestaña nueva)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Cómo llegar</span>
+        </a>
       </div>
 
       <div>
         <p class="footer__title">Horarios</p>
-        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
+        <p class="footer__text">Martes a Domingo<br><span class="num">8:30 a 19:00hs</span><br>Lunes cerrado</p>
       </div>
 
       <div>

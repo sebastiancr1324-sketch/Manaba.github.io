@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
   const boton = document.querySelector('.header__toggle');
   const menu = document.querySelector('.header__nav');
+
+  if (header) {
+    const marcarScroll = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    marcarScroll();
+    window.addEventListener('scroll', marcarScroll, { passive: true });
+  }
 
   if (boton && menu) {
     const setMenu = (abierto) => {

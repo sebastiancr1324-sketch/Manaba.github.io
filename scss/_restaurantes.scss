@@ -5,59 +5,55 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// ---- Hero de la página: único arco ----
 .rest-intro {
   @extend %container;
+  @extend %section;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: $space-xl;
-  padding-block: $space-2xl $space-xl;
+  gap: var(--space-12);
 
   @include respond-desktop {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: $space-2xl;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-16);
   }
 
   &__eyebrow {
     @extend %eyebrow;
     display: flex;
-    margin-bottom: $space-md;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    @extend %sec-title;
-    font-size: clamp(2.6rem, 6vw, 4.8rem);
-    margin-bottom: $space-md;
-
-    em {
-      font-style: italic;
-      color: $terracota;
-    }
+    @include t-h1;
+    margin-bottom: var(--space-8);
   }
 
   &__text {
-    color: $marron-suave;
-    max-width: 48ch;
-    margin-bottom: $space-lg;
-    font-size: clamp(1rem, 1.4vw, 1.125rem);
-    line-height: 1.75;
+    @extend %lead;
+    margin-bottom: var(--space-8);
   }
 
   &__actions {
-    @include flex(row, center, flex-start, $space-md);
+    @include flex(row, center, flex-start, var(--space-6));
     flex-wrap: wrap;
   }
 
   &__visual {
     @extend %arch;
-    max-width: 520px;
-    margin-inline: auto;
     width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: $arena;
-    border: 1px solid $borde;
-    box-shadow: $shadow-md;
+    background: var(--cream-200);
+    border: 1px solid var(--line);
+    animation: manaba-fade 0.8s ease both;
+
+    @include respond-desktop {
+      margin-inline: auto 0;
+    }
 
     img {
       width: 100%;
@@ -70,63 +66,43 @@
 // ---- Panel oscuro (catálogo de granos) ----
 .rest-panel {
   @extend %container;
-  padding-block: $space-sm $space-2xl;
+  @extend %section;
 
   &__inner {
-    background: $espresso;
-    color: $blanco-calido;
-    border-radius: $radius-lg;
-    padding: clamp(2rem, 5vw, 4rem);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 8% 10%, rgba(93, 68, 50, 0.5), transparent 42%),
-        radial-gradient(circle at 95% 100%, rgba(138, 109, 85, 0.35), transparent 45%);
-      pointer-events: none;
-    }
+    background: var(--espresso-900);
+    color: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: clamp(var(--space-8), 6vw, var(--space-16));
   }
 
   &__eyebrow {
-    @extend %eyebrow;
-    color: $primary-claro;
+    @extend %eyebrow-dark;
     display: flex;
-    position: relative;
-    margin-bottom: $space-sm;
-
-    &::before {
-      background: $primary-claro;
-    }
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    position: relative;
-    color: $blanco-calido;
-    font-size: clamp(1.9rem, 4vw, 3rem);
-    margin-bottom: $space-sm;
+    @include t-h2;
+    color: var(--surface);
+    margin-bottom: var(--space-4);
 
     em {
-      font-style: italic;
-      color: $primary-claro;
+      color: var(--sand-300);
     }
   }
 
   &__lead {
-    position: relative;
-    color: rgba($blanco-calido, 0.72);
-    max-width: 52ch;
-    margin-bottom: $space-lg;
+    @include t-body-lg;
+    color: color-mix(in srgb, var(--surface) 80%, transparent);
+    max-width: 36rem;
+    margin-bottom: var(--space-8);
   }
 }
 
 .rest-granos {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-md;
+  gap: var(--space-6);
 
   @include respond-tablet {
     grid-template-columns: repeat(3, 1fr);
@@ -134,169 +110,143 @@
 }
 
 .card-grano {
-  background: $blanco-calido;
-  color: $marron;
-  border-radius: $radius-md;
-  padding: $space-lg $space-md;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  @include ease(transform 0.3s ease, box-shadow 0.3s ease);
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: $shadow-md;
-  }
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--surface);
+  color: var(--espresso-800);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
 
   &__name {
-    font-family: $font-display;
-    font-size: 1.35rem;
-    color: $terracota;
+    @include t-h3;
+    color: var(--espresso-800);
   }
 
   &__note {
-    font-size: 0.72rem;
+    @include t-small;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: $salvia;
+    color: var(--cafe-700);
   }
 
   &__desc {
-    color: $marron-suave;
-    font-size: 0.92rem;
+    @include t-small;
+    color: var(--text-muted);
     flex: 1;
   }
 
   &__tag {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: $marron;
-    background: $crema;
-    border: 1px solid $borde;
-    border-radius: $radius-pill;
-    padding: 0.35rem 0.8rem;
-    display: inline-block;
-    align-self: flex-start;
+    margin-top: var(--space-2);
+    white-space: normal;
   }
 }
 
 // ---- Sección estándar ----
 .rest-block {
-  padding-block: $space-xl;
+  @extend %section;
 
   &__inner {
     @extend %container;
   }
 
   &__head {
-    max-width: 46ch;
-    margin-bottom: $space-lg;
+    max-width: 36rem;
+    margin-bottom: var(--space-8);
   }
 
   &__eyebrow {
     @extend %eyebrow;
     display: flex;
-    margin-bottom: $space-md;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
     @extend %sec-title;
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
-  }
-
-  &__lead {
-    color: $marron-suave;
-    max-width: 56ch;
-    margin-top: $space-sm;
   }
 }
 
 .rest-beneficios {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-lg;
+  gap: var(--space-8);
 
   @include respond-tablet {
     grid-template-columns: repeat(2, 1fr);
-    gap: $space-lg $space-xl;
+    gap: var(--space-8) var(--space-12);
   }
 }
 
 .rest-beneficio {
-  padding: $space-sm 0 $space-md;
-  border-top: 1px solid $borde;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
 
   &__num {
-    font-family: $font-display;
+    display: block;
+    font-family: var(--font-display);
     font-style: italic;
-    color: $terracota;
-    font-size: 1rem;
+    font-size: 1.125rem;
+    color: var(--cafe-700);
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    font-size: 1.2rem;
-    margin-block: 0.4rem;
+    @include t-title;
+    margin-bottom: var(--space-2);
   }
 
   &__desc {
-    color: $marron-suave;
-    font-size: 0.94rem;
-    line-height: 1.65;
+    @include t-small;
+    color: var(--text-muted);
+    max-width: 36rem;
   }
 }
 
 .rest-plan {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-md;
+  gap: var(--space-8);
 
   @include respond-tablet {
     grid-template-columns: repeat(3, 1fr);
-    gap: $space-lg;
   }
 }
 
 .rest-plan__item {
-  padding: $space-md $space-sm 0;
-  border-top: 1px solid $borde;
-  position: relative;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
 
   .rest-plan__num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(row, center, center);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background: $terracota;
-    color: $blanco-calido;
-    font-family: $font-display;
-    font-weight: 700;
-    margin-bottom: $space-sm;
+    border-radius: var(--radius-pill);
+    background: var(--cafe-700);
+    color: var(--on-brand);
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-4);
   }
 
   .rest-plan__name {
-    font-family: $font-display;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: $marron;
-    margin-bottom: 0.35rem;
+    @include t-title;
+    color: var(--espresso-800);
+    margin-bottom: var(--space-2);
   }
 
   .rest-plan__desc {
-    color: $marron-suave;
-    font-size: 0.92rem;
-    line-height: 1.65;
+    @include t-small;
+    color: var(--text-muted);
   }
 }
 
+// ---- Formulario mayorista ----
 .rest-contact {
   @extend %container;
-  padding-block: $space-sm $space-2xl;
+  @extend %section;
 
   &__inner {
-    max-width: 760px;
+    max-width: 52rem;
     margin-inline: auto;
     text-align: center;
   }
@@ -304,27 +254,18 @@
   &__eyebrow {
     @extend %eyebrow;
     justify-content: center;
-    display: inline-flex;
-    margin-bottom: $space-sm;
-
-    &::before {
-      background: $terracota;
-    }
+    margin-bottom: var(--space-3);
   }
 
   &__title {
     @extend %sec-title;
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
-    margin-block: 0 $space-sm;
+    margin-bottom: var(--space-4);
   }
 
   &__text {
-    color: $marron-suave;
-    max-width: 52ch;
-    margin: 0 auto $space-lg;
-  }
-
-  .formulario {
-    text-align: left;
+    @include t-body;
+    color: var(--text-muted);
+    max-width: 36rem;
+    margin: 0 auto var(--space-8);
   }
 }

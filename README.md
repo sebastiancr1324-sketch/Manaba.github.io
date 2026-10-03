@@ -7,13 +7,16 @@ JavaScript sin dependencias, publicado con GitHub Pages en
 ## Estructura
 
 - `index.html`, `404.html` y `pages/`: las páginas.
-- `scss/`: estilos fuente. `css/main.css` es el resultado compilado y se
+- `scss/`: estilos fuente. Colores, tipografías, espaciado, radios y sombras
+  viven como custom properties en `scss/_tokens.scss`: no se usan hex ni
+  `rgba` fuera de ese archivo. `css/main.css` es el resultado compilado y se
   sube al repo, porque GitHub Pages sirve los archivos tal cual.
 - `js/main.js`: menú móvil, animaciones de entrada, formularios de
   demostración y año del pie.
 - `fonts/`: Poppins y JetBrains Mono (subconjunto latino, licencia SIL OFL).
-- `img/`: fotos en WebP (480, 800 y 1200 px), ilustraciones SVG, imagen
-  para redes (`og-manaba.jpg`) e íconos.
+  Fraunces, la de los títulos, se carga desde Google Fonts.
+- `img/`: fotos en WebP (480, 800 y 1200 px), imagen para redes
+  (`og-manaba.jpg`) e íconos.
 
 ## Compilar los estilos
 
