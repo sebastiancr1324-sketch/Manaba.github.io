@@ -7,119 +7,130 @@
 
 .pagina-hero {
   @extend %container;
-  max-width: 1020px;
-  padding-block: $space-xl $space-xl;
-  border-bottom: 1px solid $borde;
-  margin-bottom: $space-2xl;
+
+  &__inner {
+    padding-block: var(--section-y);
+    border-bottom: 1px solid var(--line);
+  }
 
   &--center {
-    max-width: 780px;
     text-align: center;
-    border-bottom: none;
-    margin-bottom: 0;
+
+    .pagina-hero__inner {
+      border-bottom: none;
+    }
 
     .pagina-hero__eyebrow {
       justify-content: center;
 
-      &::before,
       &::after {
         content: '';
-        width: 2.25rem;
+        width: 24px;
         height: 1px;
-        background: $terracota;
+        background: currentColor;
       }
+    }
+
+    .pagina-hero__title,
+    .pagina-hero__text {
+      margin-inline: auto;
+    }
+
+    .pagina-hero__actions {
+      justify-content: center;
     }
   }
 
   &__eyebrow {
     @extend %eyebrow;
-    display: inline-flex;
-    margin-bottom: $space-md;
+    display: flex;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    @extend %sec-title;
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    margin-bottom: $space-md;
-
-    em {
-      font-style: italic;
-      color: $terracota;
-    }
+    @include t-h1;
+    max-width: 18ch;
+    margin-bottom: var(--space-8);
   }
 
   &__text {
-    color: $marron-suave;
-    max-width: 60ch;
-    font-size: clamp(1rem, 1.4vw, 1.125rem);
-    line-height: 1.75;
-    margin-bottom: $space-md;
+    @extend %lead;
   }
 
   &__actions {
-    @include flex(row, center, flex-start, $space-md);
+    @include flex(row, center, flex-start, var(--space-4));
     flex-wrap: wrap;
+    margin-top: var(--space-8);
   }
 }
 
+// ---- Banda CTA oscura ----
 .cta-band {
   @extend %container;
-  padding-block: $space-2xl;
+  @extend %section;
 
   &__inner {
-    position: relative;
-    overflow: hidden;
-    background: $espresso;
-    color: $blanco-calido;
-    border-radius: $radius-lg;
-    padding: clamp(2.5rem, 6vw, 5rem);
-    text-align: center;
-    box-shadow: $shadow-panel;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-12);
+    background: var(--espresso-900);
+    color: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: clamp(var(--space-8), 6vw, var(--space-16));
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 12% 20%, rgba(93, 68, 50, 0.5), transparent 40%),
-        radial-gradient(circle at 88% 85%, rgba(138, 109, 85, 0.35), transparent 45%);
-      pointer-events: none;
+    @include respond-desktop {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    :focus-visible {
+      outline-color: var(--sand-300);
     }
   }
 
   &__eyebrow {
-    @extend %eyebrow;
-    color: $primary-claro;
-    justify-content: center;
-    position: relative;
-
-    &::before {
-      background: $primary-claro;
-    }
+    @extend %eyebrow-dark;
+    display: flex;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
-    position: relative;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    color: $blanco-calido;
-    margin-block: $space-sm $space-sm;
+    @include t-h2;
+    color: var(--surface);
+    margin-bottom: var(--space-8);
 
     em {
-      font-style: italic;
-      color: $primary-claro;
+      color: var(--sand-300);
     }
   }
 
   &__text {
-    position: relative;
-    color: rgba($blanco-calido, 0.75);
-    max-width: 52ch;
-    margin: 0 auto $space-lg;
+    @include t-body-lg;
+    color: color-mix(in srgb, var(--surface) 80%, transparent);
+    max-width: 36rem;
+    margin-bottom: var(--space-8);
   }
 
   &__actions {
-    position: relative;
-    @include flex(row, center, center, $space-sm);
+    @include flex(row, center, flex-start, var(--space-4));
     flex-wrap: wrap;
+  }
+
+  // Foto opcional, solo en desktop
+  &__media {
+    display: none;
+
+    @include respond-desktop {
+      display: block;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }

@@ -1,0 +1,59 @@
+// =====================================================
+// TOKENS — Manaba
+// Única fuente de color del sitio: ningún hex ni rgba
+// fuera de este archivo. Las transparencias se derivan
+// con color-mix() a partir de estos mismos tokens.
+// =====================================================
+
+@use 'variables' as *;
+
+:root {
+  /* Color */
+  --espresso-900: #2E2118; /* footer y banda CTA (fondo oscuro) */
+  --espresso-800: #3E2B1E; /* títulos y texto principal */
+  --cafe-700:     #5D4432; /* color de marca: botones, links, eyebrows, foco */
+  --cafe-750:     #463224; /* hover / pressed del botón primario */
+  --text-muted:   #6C5B4A; /* texto secundario */
+  --caramel-500:  #8A6D55; /* solo decorativo: NO para texto < 24px (4.47:1) */
+  --sand-300:     #D9BFA2; /* acento cálido, palabra destacada sobre fondo oscuro */
+  --line:         #E3D9CC; /* bordes y divisores */
+  --cream-200:    #E9E3DD; /* tile del logo, tags, franjas alternadas */
+  --bg:           #F9F7F5; /* fondo de página */
+  --surface:      #FFFDF9; /* tarjetas, formularios, header al scrollear */
+  --on-brand:     #FBF8F4; /* texto sobre --cafe-700 */
+
+  /* Tipografía */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, monospace;
+
+  /* Espaciado */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-6: 24px;  --space-8: 32px;  --space-12: 48px; --space-16: 64px;
+  --space-24: 96px; --space-32: 128px;
+
+  /* Radios */
+  --radius-sm: 4px;    /* inputs, imágenes chicas */
+  --radius-md: 8px;    /* botones, tarjetas, fotos */
+  --radius-lg: 16px;   /* banda CTA */
+  --radius-pill: 999px;/* tags, sello, botón de menú mobile, parte superior del arco */
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(46, 33, 24, 0.06);
+  --shadow-md: 0 18px 40px -24px rgba(46, 33, 24, 0.25);
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: var(--space-4);
+  --section-y: var(--space-16);
+  --header-h: 80px;
+
+  @media (min-width: $bp-tablet) {
+    --gutter: var(--space-8);
+  }
+
+  @media (min-width: $bp-desktop) {
+    --gutter: var(--space-12);
+    --section-y: var(--space-24);
+  }
+}

@@ -7,19 +7,21 @@
 
 .contenido-legal {
   @extend %container;
-  max-width: 780px;
-  padding-block: $space-sm $space-2xl;
+  @extend %section;
+
+  > * {
+    max-width: 40rem;
+  }
 
   &__fecha {
-    color: $marron-suave;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    margin-bottom: $space-lg;
+    @include t-small;
+    color: var(--text-muted);
+    margin-bottom: var(--space-8);
   }
 
   section {
-    padding-block: $space-md;
-    border-bottom: 1px solid $borde;
+    padding-block: var(--space-8);
+    border-bottom: 1px solid var(--line);
 
     &:first-of-type {
       padding-top: 0;
@@ -27,40 +29,43 @@
   }
 
   h2 {
-    @extend %sec-title;
-    font-size: 1.45rem;
-    margin-bottom: $space-sm;
+    @include t-h3;
+    margin-bottom: var(--space-4);
   }
 
   h3 {
-    font-size: 1.1rem;
-    margin-top: $space-sm;
-    margin-bottom: 0.35rem;
+    @include t-title;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
   }
 
   p {
-    color: $marron-suave;
-    margin-bottom: $space-sm;
-    max-width: 65ch;
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+    max-width: 36rem;
   }
 
   ul {
     list-style: disc;
-    padding-left: 1.4rem;
-    margin-bottom: $space-sm;
-    color: $marron-suave;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-3);
+    color: var(--text-muted);
+    max-width: 36rem;
 
     li {
-      margin-bottom: 0.35rem;
+      margin-bottom: var(--space-2);
     }
   }
 
   a {
-    color: $terracota;
-    border-bottom: 1px solid rgba($terracota, 0.4);
+    color: var(--cafe-700);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
 
     &:hover {
-      border-color: $terracota;
+      text-decoration-color: var(--cafe-700);
     }
   }
 }

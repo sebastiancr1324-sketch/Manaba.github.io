@@ -9,7 +9,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -54,19 +54,19 @@
 
   <main id="contenido">
     <section class="hero">
-      <div class="hero__content reveal reveal--left">
+      <div class="hero__content">
         <span class="hero__eyebrow">Café de especialidad · Palermo, CABA</span>
         <h1 class="hero__title">Un lugar para arrancar el día <em>con calma</em></h1>
         <p class="hero__text">Café de especialidad, productos de estación y panadería hecha en casa. Brunch de barrio, sin apuro.</p>
         <div class="hero__actions">
           <a href="pages/reservas.html" class="btn btn--primary">Reservar mesa</a>
-          <a href="pages/menu.html" class="link-arrow">Ver el menú <span class="link-arrow__icon">→</span></a>
+          <a href="pages/menu.html" class="link-arrow"><span class="link-arrow__text">Ver el menú</span> <span class="link-arrow__icon" aria-hidden="true">→</span></a>
         </div>
       </div>
 
-      <div class="hero__visual reveal reveal--right">
+      <div class="hero__visual">
         <div class="hero__arch">
-          <img src="img/foto-hero.jpg" alt="Interior de Manaba — barra de café y brunch">
+          <img src="img/foto-hero.webp" width="1200" height="800" fetchpriority="high" alt="Salón de Manaba con mesas largas de madera y la barra de café al fondo">
         </div>
         <div class="hero__ticket" aria-hidden="true">
           <span class="hero__ticket-label">En la barra hoy</span>
@@ -81,18 +81,23 @@
       </div>
     </section>
 
-    <div class="info-franja" aria-label="Datos rápidos">
-      <div class="info-franja__item">
-        <span>Horario</span>
-        <strong>Mar a Dom · 8:30 a 19:00hs</strong>
-      </div>
-      <div class="info-franja__item">
-        <span>Ubicación</span>
-        <strong>Gorriti 4820 · Palermo, CABA</strong>
-      </div>
-      <div class="info-franja__item">
-        <span>Reservas</span>
-        <strong>+54 9 11 0000-0000</strong>
+    <div class="info-franja">
+      <div class="info-franja__inner">
+        <div class="info-franja__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Horario</span>
+          <strong class="num">Mar a Dom · 8:30 a 19:00hs</strong>
+        </div>
+        <div class="info-franja__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Ubicación</span>
+          <strong>Gorriti 4820 · Palermo, CABA</strong>
+        </div>
+        <div class="info-franja__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          <span>Reservas</span>
+          <strong class="num">+54 9 11 0000-0000</strong>
+        </div>
       </div>
     </div>
 
@@ -100,60 +105,51 @@
       <div class="destacados__head">
         <div>
           <span class="destacados__eyebrow">De la casa</span>
-          <h2 class="destacados__title" id="destacados-title">Nuestros favoritos</h2>
+          <h2 class="destacados__title" id="destacados-title">Nuestros <em>favoritos</em></h2>
         </div>
-        <a href="pages/menu.html" class="link-arrow">Ver el menú completo <span class="link-arrow__icon">→</span></a>
+        <a href="pages/menu.html" class="link-arrow"><span class="link-arrow__text">Ver el menú completo</span> <span class="link-arrow__icon" aria-hidden="true">→</span></a>
       </div>
 
       <div class="destacados__grid reveal-stagger">
         <article class="card-plato">
-          <a class="card-plato__media" href="pages/menu.html">
-            <img src="img/foto-menu-tostado.jpg" alt="Tostado de palta y huevo poché">
-          </a>
+          <div class="card-plato__media">
+            <img src="img/foto-nos-salon.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Tostadas de pan con huevo, tomates asados y hojas verdes">
+          </div>
           <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">01</span>
+            <span class="tag">Brunch</span>
+            <div class="card-plato__head">
+              <h3 class="card-plato__title">Tostado de palta y huevo poché</h3>
+              <p class="card-plato__precio">$9800</p>
             </div>
-            <h3 class="card-plato__title">Tostado de palta y huevo poché</h3>
             <p class="card-plato__desc">Pan de masa madre, palta, huevo poché y semillas tostadas.</p>
-            <div class="card-plato__foot">
-              <a href="pages/menu.html" class="link-arrow">Ver en el menú <span class="link-arrow__icon">→</span></a>
-            </div>
           </div>
         </article>
 
         <article class="card-plato">
-          <a class="card-plato__media" href="pages/menu.html">
-            <img src="img/foto-menu-panqueques.jpg" alt="Panqueques con frutos rojos">
-          </a>
+          <div class="card-plato__media">
+            <img src="img/foto-menu-panqueques.webp" width="1200" height="1450" loading="lazy" decoding="async" style="--focal: 50% 62%" alt="Pila de panqueques con banana y almíbar">
+          </div>
           <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">02</span>
+            <span class="tag">Brunch</span>
+            <div class="card-plato__head">
+              <h3 class="card-plato__title">Panqueques con frutos rojos</h3>
+              <p class="card-plato__precio">$8600</p>
             </div>
-            <h3 class="card-plato__title">Panqueques con frutos rojos</h3>
             <p class="card-plato__desc">Panqueques caseros, frutos rojos de estación y miel.</p>
-            <div class="card-plato__foot">
-              <a href="pages/menu.html" class="link-arrow">Ver en el menú <span class="link-arrow__icon">→</span></a>
-            </div>
           </div>
         </article>
 
         <article class="card-plato">
-          <a class="card-plato__media" href="pages/menu.html">
-            <img src="img/foto-menu-cafe.jpg" alt="Café de especialidad filtrado">
-          </a>
+          <div class="card-plato__media">
+            <img src="img/foto-menu-cafe.webp" width="1200" height="1800" loading="lazy" decoding="async" style="--focal: 50% 66%" alt="Dos cafés con arte latte sobre una mesa de madera">
+          </div>
           <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Café</span>
-              <span class="num">03</span>
+            <span class="tag">Café</span>
+            <div class="card-plato__head">
+              <h3 class="card-plato__title">Café de especialidad</h3>
+              <p class="card-plato__precio">$1600</p>
             </div>
-            <h3 class="card-plato__title">Café de especialidad</h3>
             <p class="card-plato__desc">Método filtrado, granos de origen único, tostado propio.</p>
-            <div class="card-plato__foot">
-              <a href="pages/menu.html" class="link-arrow">Ver en el menú <span class="link-arrow__icon">→</span></a>
-            </div>
           </div>
         </article>
       </div>
@@ -179,7 +175,7 @@
     </div>
 
     <section class="split" aria-labelledby="split-tostado">
-      <div class="reveal reveal--left">
+      <div class="reveal">
         <span class="split__eyebrow">De la semilla a la taza</span>
         <h2 class="split__title" id="split-tostado">Tostamos nuestro <em>propio café</em></h2>
         <p class="split__text">Cada grano que servimos pasó por nuestra tostadora en lotes pequeños. Trabajamos con productores a los que conocemos por nombre, y buscamos que ese trabajo se sienta en cada taza.</p>
@@ -188,9 +184,9 @@
           <a href="pages/nosotros.html" class="btn btn--ghost">Nuestra historia</a>
         </div>
       </div>
-      <div class="split__media reveal reveal--right">
+      <div class="split__media reveal">
         <figure>
-          <img src="img/foto-nos-tostado.jpg" alt="Tostaduría propia de Manaba en lotes pequeños">
+          <img src="img/foto-nos-tostado.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Granos de café tostado en una bolsa de arpillera">
         </figure>
         <div class="split__card" aria-hidden="true">
           <span>Tostado semanal</span>
@@ -199,13 +195,18 @@
       </div>
     </section>
 
-    <section class="cta-band reveal reveal--bottom">
+    <section class="cta-band reveal" aria-labelledby="cta-mayorista">
       <div class="cta-band__inner">
-        <span class="cta-band__eyebrow">Manaba Mayorista</span>
-        <h2 class="cta-band__title">¿Querés nuestro café en <em>tu restaurante?</em></h2>
-        <p class="cta-band__text">Tostado propio, entrenamiento barista y asesoría para que el café sea parte de la experiencia de tu carta.</p>
-        <div class="cta-band__actions">
-          <a href="pages/restaurantes.html" class="btn btn--light">Ver propuesta mayorista</a>
+        <div>
+          <span class="cta-band__eyebrow">Manaba Mayorista</span>
+          <h2 class="cta-band__title" id="cta-mayorista">¿Querés nuestro café en <em>tu restaurante</em>?</h2>
+          <p class="cta-band__text">Tostado propio, entrenamiento barista y asesoría para que el café sea parte de la experiencia de tu carta.</p>
+          <div class="cta-band__actions">
+            <a href="pages/restaurantes.html" class="btn btn--light">Ver propuesta mayorista</a>
+          </div>
+        </div>
+        <div class="cta-band__media">
+          <img src="img/foto-b2b-intro.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Barista preparando café filtrado con una pava de pico fino">
         </div>
       </div>
     </section>
@@ -214,23 +215,40 @@
   <footer class="footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand">Manaba</p>
+        <div class="footer__brand">
+          <span class="footer__brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9h9v5a4.5 4.5 0 0 1-9 0Z"/>
+              <path d="M15 10.5h1.2a2.3 2.3 0 0 1 0 4.6H15"/>
+              <path d="M10.5 7V5.8M13.5 7V5.8"/>
+            </svg>
+          </span>
+          <span>
+            <span class="footer__brand-text">Manaba</span>
+            <span class="footer__brand-sub">Café de especialidad</span>
+          </span>
+        </div>
         <p class="footer__tagline">Café de especialidad, brunch y panadería de barrio en Palermo.</p>
         <div class="footer__social">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram de Manaba">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <a class="footer__link" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
+            <span>Instagram</span>
           </a>
         </div>
       </div>
 
       <div>
         <p class="footer__title">Visitá el café</p>
-        <p class="footer__text">Gorriti 4820, Palermo<br>+54 9 11 0000-0000<br>hola@manaba.com.ar</p>
+        <p class="footer__text">Gorriti 4820, Palermo<br><span class="num">+54 9 11 0000-0000</span><br>hola@manaba.com.ar</p>
+        <a class="footer__link" href="https://www.google.com/maps/search/?api=1&amp;query=Gorriti+4820%2C+Palermo%2C+CABA" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Cómo llegar</span>
+        </a>
       </div>
 
       <div>
         <p class="footer__title">Horarios</p>
-        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
+        <p class="footer__text">Martes a Domingo<br><span class="num">8:30 a 19:00hs</span><br>Lunes cerrado</p>
       </div>
 
       <div>

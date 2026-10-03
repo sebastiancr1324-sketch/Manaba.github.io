@@ -1,11 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
   const boton = document.querySelector('.header__toggle');
   const menu = document.querySelector('.header__nav');
 
+  if (header) {
+    const marcarScroll = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    marcarScroll();
+    window.addEventListener('scroll', marcarScroll, { passive: true });
+  }
+
   if (boton && menu) {
+    const cerrarMenu = () => {
+      menu.classList.remove('is-open');
+      boton.setAttribute('aria-expanded', 'false');
+      boton.setAttribute('aria-label', 'Abrir menú');
+    };
+
     boton.addEventListener('click', () => {
       const abierto = menu.classList.toggle('is-open');
       boton.setAttribute('aria-expanded', abierto);
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape' && menu.classList.contains('is-open')) {
+        cerrarMenu();
+        boton.focus();
+      }
     });
   }
 

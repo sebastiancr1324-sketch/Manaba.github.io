@@ -1,25 +1,23 @@
 // =====================================================
-// MARQUEE — cinta editorial en Poppins itálica
+// MARQUEE — cinta en Fraunces itálica, lenta
+// Se detiene con prefers-reduced-motion (ver _base).
 // =====================================================
 
 @use 'variables' as *;
 @use 'mixins' as *;
 
 .marquee {
-  background: $arena;
-  border-block: 1px solid $borde;
+  background: var(--cream-200);
+  border-block: 1px solid var(--line);
   overflow: hidden;
-  padding-block: $space-lg;
+  padding-block: var(--space-6);
 
   &__track {
-    @include marquee-track(42s);
-    font-family: $font-display;
+    @include marquee-track(90s);
+    @include t-h3;
     font-style: italic;
-    font-weight: 600;
-    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: $marron;
+    font-weight: 400;
+    color: var(--cafe-700);
     white-space: nowrap;
   }
 
@@ -31,14 +29,12 @@
     span {
       display: inline-flex;
       align-items: center;
-      gap: 2rem;
-      padding-inline: 1rem;
 
+      // Separador: punto medio
       &::after {
-        content: '✦';
+        content: '·';
         font-style: normal;
-        font-size: 0.55em;
-        color: $terracota;
+        padding-inline: var(--space-6);
       }
     }
   }

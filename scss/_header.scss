@@ -1,5 +1,7 @@
 // =====================================================
 // HEADER / NAV
+// Nav horizontal desde 1024px. Al scrollear: fondo
+// --surface, --shadow-sm y altura reducida.
 // =====================================================
 
 @use 'variables' as *;
@@ -9,22 +11,34 @@
   position: sticky;
   top: 0;
   z-index: $z-header;
-  background: rgba($crema, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid $borde;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  @include ease(background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease);
+
+  &.is-scrolled {
+    background: var(--surface);
+    border-bottom-color: var(--line);
+    box-shadow: var(--shadow-sm);
+
+    .header__inner {
+      padding-block: var(--space-2);
+    }
+  }
 
   &__inner {
     @extend %container;
-    @include flex(row, center, space-between);
-    padding-block: 0.9rem;
-    gap: $space-md;
+    @include flex(row, center, space-between, var(--space-6));
+    padding-block: var(--space-4);
+    @include ease(padding 0.3s ease);
   }
 
+  // ---- Logo (no se modifica) ----
   &__logo {
-    @extend %focus-ring;
     @include flex(row, center, flex-start, 0.8rem);
     flex: 0 0 auto;
+    border-radius: var(--radius-sm);
   }
 
   &__logo-mark {
@@ -32,9 +46,9 @@
     width: 42px;
     height: 42px;
     border-radius: 13px;
-    background: $arena;
-    border: 1px solid $borde;
-    color: $terracota;
+    background: var(--cream-200);
+    border: 1px solid var(--line);
+    color: var(--cafe-700);
 
     svg {
       width: 22px;
@@ -43,112 +57,79 @@
   }
 
   &__logo-text {
-    font-family: $font-display;
+    display: block;
+    font-family: var(--font-sans);
     font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1;
-    color: $marron;
-    display: block;
+    color: var(--espresso-800);
   }
 
   &__logo-sub {
     display: block;
-    font-family: $font-mono;
-    font-size: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem; // tamaño original del logo
     font-weight: 500;
+    line-height: 1.7; // igual que el original (heredaba del body)
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: $marron-suave;
+    color: var(--text-muted);
     margin-top: 0.3rem;
   }
 
+  // ---- Botón de menú mobile ----
   &__toggle {
     @include flex(column, center, center, 4px);
+    width: 48px;
+    height: 44px;
     background: none;
-    border: 1px solid $borde;
-    border-radius: $radius-pill;
-    padding: 0.7rem 0.85rem;
-    color: $marron;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    color: var(--espresso-800);
 
     span {
       width: 18px;
       height: 2px;
       background: currentColor;
-      border-radius: 2px;
+      border-radius: var(--radius-pill);
       @include ease(transform 0.25s ease, opacity 0.25s ease);
     }
 
     &[aria-expanded='true'] {
       span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
+        transform: translateY(3px) rotate(45deg);
       }
       span:nth-child(2) {
-        opacity: 0;
+        transform: translateY(-3px) rotate(-45deg);
       }
     }
 
-    @media (min-width: $bp-header) {
+    @include respond-desktop {
       display: none;
     }
   }
 
+  // ---- Navegación ----
   &__nav {
     display: none;
 
-    &.is-open {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.4rem;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: rgba($blanco-calido, 0.97);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid $borde;
-      padding: $space-sm clamp(1.25rem, 4vw, 2.5rem) $space-md;
-      box-shadow: $shadow-md;
-
-      ul {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        margin-bottom: $space-sm;
-      }
-
-      .header__cta {
-        display: flex;
-        justify-content: center;
-      }
-    }
-
-    @media (min-width: $bp-header) {
-      display: flex;
-      align-items: center;
-      gap: clamp(1.25rem, 1.6vw, 2rem);
-
-      .header__cta {
-        display: inline-flex;
-      }
-    }
-
     ul {
-      @include flex(row, center, center, clamp(1.4rem, 1.7vw, 2.25rem));
+      // 16px a 1024, 24px desde ~1500: entra junto al logo sin apretarse
+      @include flex(row, center, center, clamp(var(--space-4), 1.6vw, var(--space-6)));
     }
 
     a:not(.btn) {
-      font-family: $font-body;
-      font-weight: 600;
-      font-size: 0.76rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      text-decoration: none;
-      color: $marron;
       position: relative;
-      padding-block: 0.35rem;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-family: var(--font-sans);
+      font-size: 0.875rem; // 14
+      font-weight: 500;
+      line-height: 1;
+      white-space: nowrap;
+      color: var(--espresso-800);
       @include ease(color 0.2s ease);
 
       &::after {
@@ -156,25 +137,17 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
-        height: 2px;
-        background: $terracota;
-        border-radius: 2px;
+        bottom: 8px;
+        height: 1px;
+        background: currentColor;
         transform: scaleX(0);
         transform-origin: left;
         @include ease(transform 0.25s ease);
       }
 
-      &:hover {
-        color: $terracota;
-
-        &::after {
-          transform: scaleX(1);
-        }
-      }
-
+      &:hover,
       &[aria-current='page'] {
-        color: $terracota;
+        color: var(--cafe-700);
 
         &::after {
           transform: scaleX(1);
@@ -182,8 +155,52 @@
       }
     }
 
-    .header__cta {
-      padding: 0.75rem 1.4rem;
+    // Panel desplegable (mobile / tablet)
+    @media (max-width: ($bp-desktop - 0.02px)) {
+      &.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-block: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        padding: var(--space-2) var(--gutter) var(--space-6);
+
+        ul {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          margin-bottom: var(--space-4);
+        }
+
+        li + li {
+          border-top: 1px solid var(--line);
+        }
+
+        a:not(.btn) {
+          display: flex;
+          min-height: 52px;
+          font-size: 1rem;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
     }
+
+    @include respond-desktop {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+  }
+
+  &__cta {
+    flex: 0 0 auto;
   }
 }

@@ -1,116 +1,91 @@
 // =====================================================
-// UI KIT — botones, enlaces con flecha, chips, tags
+// UI KIT — botones, link con flecha, tags, eyebrow
 // =====================================================
 
 @use 'variables' as *;
 @use 'mixins' as *;
 
 .btn {
-  @extend %focus-ring;
+  @include t-button;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: $radius-md;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-md);
   border: 1px solid transparent;
-  font-family: $font-body;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   text-decoration: none;
-  line-height: 1;
-  position: relative;
-  @include ease(transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease);
+  white-space: nowrap;
+  @include ease(background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease);
 
   &:active:not(:disabled) {
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
 
-  svg {
-    width: 15px;
-    height: 15px;
-    @include ease(transform 0.25s ease);
-  }
-
-  &:hover svg {
-    transform: translateX(3px);
-  }
-
+  // Primario: relleno de marca
   &--primary {
-    background: $terracota;
-    color: $on-primary;
-    box-shadow: $shadow-sm;
+    background: var(--cafe-700);
+    color: var(--on-brand);
 
-    &:hover {
-      background: $terracota-suave;
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
-    }
-
+    &:hover,
     &:active {
-      background: $terracota-oscura;
+      background: var(--cafe-750);
     }
   }
 
+  // Secundario: borde de marca, fondo transparente
   &--ghost {
-    border-color: $marron;
-    color: $marron;
     background: transparent;
+    border-color: var(--cafe-700);
+    color: var(--cafe-700);
 
     &:hover {
-      border-color: $terracota;
-      color: $terracota;
-      transform: translateY(-2px);
+      background: var(--cream-200);
     }
   }
 
+  // Claro: sobre fondo oscuro
   &--light {
-    background: $blanco-calido;
-    color: $espresso;
+    background: var(--surface);
+    color: var(--espresso-800);
 
     &:hover {
-      background: $terracota;
-      color: $blanco-calido;
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
+      background: var(--cream-200);
     }
-  }
 
-  &--ghost-light {
-    border-color: rgba($blanco-calido, 0.4);
-    color: $blanco-calido;
-
-    &:hover {
-      border-color: $blanco-calido;
-      color: $blanco-calido;
-      transform: translateY(-2px);
+    &:focus-visible {
+      outline-color: var(--sand-300);
     }
   }
 }
 
-// Enlace con flecha dentro del texto
+// Enlace con flecha
 .link-arrow {
-  @extend %focus-ring;
+  @include t-button;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: $font-body;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: $marron;
-  border-bottom: 1px solid $borde;
-  padding-bottom: 0.2rem;
-  @include ease(color 0.2s ease, border-color 0.2s ease);
+  gap: var(--space-2);
+  min-height: 48px;
+  color: var(--cafe-700);
+
+  // El subrayado vive en el texto, no en la caja de 48px
+  .link-arrow__text {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+    text-decoration-color: var(--line);
+    @include ease(text-decoration-color 0.2s ease);
+  }
 
   .link-arrow__icon {
-    @include ease(transform 0.25s ease);
+    @include ease(transform 0.2s ease);
   }
 
   &:hover {
-    color: $terracota;
-    border-color: $terracota;
+    .link-arrow__text {
+      text-decoration-color: var(--cafe-700);
+    }
 
     .link-arrow__icon {
       transform: translateX(4px);
@@ -118,34 +93,23 @@
   }
 }
 
-// Chip pequeño de categoría — mono caps
-.chip {
+// Tag: pill de categoría o atributo
+.tag {
+  @include t-eyebrow;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-family: $font-mono;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $marron-suave;
-  background: $arena;
-  border: 1px solid $borde;
-  border-radius: $radius-pill;
-  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--cafe-700);
+  background: var(--cream-200);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-3);
+  white-space: nowrap;
 }
 
-.chip--grano {
-  color: $salvia;
-  background: transparent;
-  border-color: rgba($salvia, 0.4);
-}
-
-// Número decorativo editorial
-.num {
-  font-family: $font-mono;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: $terracota;
-  font-feature-settings: 'tnum' 1;
+// Eyebrow suelto
+.eyebrow {
+  @extend %eyebrow;
 }

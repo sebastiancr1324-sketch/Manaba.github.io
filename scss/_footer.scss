@@ -1,22 +1,24 @@
 // =====================================================
-// FOOTER
+// FOOTER — fondo espresso, texto --surface
 // =====================================================
 
 @use 'variables' as *;
 @use 'mixins' as *;
 
 .footer {
-  background: $espresso;
-  color: $blanco-calido;
-  margin-top: $space-2xl;
-  border-top: 1px solid rgba($blanco-calido, 0.06);
+  background: var(--espresso-900);
+  color: var(--surface);
+
+  :focus-visible {
+    outline-color: var(--sand-300);
+  }
 
   &__inner {
     @extend %container;
     display: grid;
     grid-template-columns: 1fr;
-    gap: $space-lg;
-    padding-block: $space-xl;
+    gap: var(--space-12) var(--space-8);
+    padding-block: var(--space-16);
 
     @include respond-tablet {
       grid-template-columns: repeat(2, 1fr);
@@ -24,89 +26,142 @@
 
     @include respond-desktop {
       grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: $space-xl;
+      gap: var(--space-12);
     }
   }
 
+  // Logo sobre oscuro: la taza va con trazo --surface
   &__brand {
-    font-family: $font-display;
-    font-size: 1.6rem;
+    @include flex(row, center, flex-start, 0.8rem);
+    margin-bottom: var(--space-4);
+  }
+
+  &__brand-mark {
+    @include flex(row, center, center);
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    border: 1px solid color-mix(in srgb, var(--surface) 24%, transparent);
+    color: var(--surface);
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__brand-text {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: $space-xs;
+    line-height: 1;
+  }
+
+  &__brand-sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    line-height: 1.7; // igual que el original (heredaba del body)
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--surface) 72%, transparent);
+    margin-top: 0.3rem;
   }
 
   &__tagline {
-    color: rgba($blanco-calido, 0.6);
-    font-size: 0.92rem;
+    @include t-small;
+    color: color-mix(in srgb, var(--surface) 72%, transparent);
     max-width: 32ch;
-    margin-bottom: $space-md;
   }
 
   &__title {
-    font-family: $font-mono;
-    font-weight: 500;
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: $primary-claro;
-    margin-bottom: $space-sm;
+    @extend %eyebrow-dark;
+    display: flex;
+    margin-bottom: var(--space-4);
   }
 
   &__text {
-    color: rgba($blanco-calido, 0.72);
-    font-size: 0.92rem;
+    @include t-small;
     line-height: 1.9;
+    color: color-mix(in srgb, var(--surface) 80%, transparent);
+
+    .num {
+      color: var(--surface);
+    }
 
     a {
       color: inherit;
-      border-bottom: 1px solid transparent;
-      @include ease(color 0.2s ease, border-color 0.2s ease);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      text-decoration-color: transparent;
+      @include ease(color 0.2s ease, text-decoration-color 0.2s ease);
 
       &:hover {
-        color: $primary-claro;
-        border-color: $primary-claro;
+        color: var(--surface);
+        text-decoration-color: var(--sand-300);
       }
+    }
+  }
+
+  // "Cómo llegar" y redes: links con ícono
+  &__link {
+    @include t-small;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    font-weight: 500;
+    color: var(--sand-300);
+
+    svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    span {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      text-decoration-color: color-mix(in srgb, var(--sand-300) 40%, transparent);
+      @include ease(text-decoration-color 0.2s ease);
+    }
+
+    &:hover span {
+      text-decoration-color: var(--sand-300);
     }
   }
 
   &__social {
-    @include flex(row, center, flex-start, $space-sm);
-    margin-top: $space-md;
+    margin-top: var(--space-4);
 
-    a {
-      @include flex(row, center, center);
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba($blanco-calido, 0.22);
-      border-radius: 50%;
-      color: $blanco-calido;
-      @include ease(border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease);
+    .footer__link {
+      color: var(--surface);
 
-      &:hover {
-        border-color: $terracota;
-        background: $terracota;
-        transform: translateY(-2px);
+      span {
+        text-decoration-color: color-mix(in srgb, var(--surface) 30%, transparent);
       }
 
-      svg {
-        width: 17px;
-        height: 17px;
+      &:hover span {
+        text-decoration-color: var(--surface);
       }
     }
   }
 
   &__legal {
     @extend %container;
+    @include t-small;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: $space-sm;
-    padding-top: $space-md;
-    padding-bottom: $space-md;
-    border-top: 1px solid rgba($blanco-calido, 0.1);
-    color: rgba($blanco-calido, 0.45);
-    font-size: 0.78rem;
+    gap: var(--space-3);
+    padding-block: var(--space-6);
+    border-top: 1px solid color-mix(in srgb, var(--surface) 12%, transparent);
+    color: color-mix(in srgb, var(--surface) 64%, transparent);
     text-align: center;
   }
 }

@@ -24,37 +24,16 @@
   }
 }
 
-@mixin respond-wide {
-  @media (min-width: $bp-wide) {
-    @content;
-  }
-}
-
 // Transición por defecto del sistema
 @mixin ease($transitions...) {
   transition: $transitions;
 }
 
-@mixin focus-ring($color: $terracota) {
-  outline: 2px solid $color;
-  outline-offset: 3px;
-}
-
-// Anillo de foco accesible, solo para teclado
-%focus-ring {
-  &:focus-visible {
-    outline: 2px solid $terracota;
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-}
-
-// Cinta animada duplicada (marquee / ticker)
-@mixin marquee-track($dur: 32s) {
+// Cinta animada duplicada (marquee)
+@mixin marquee-track($dur: 80s) {
   display: flex;
   width: max-content;
   animation: manaba-marquee $dur linear infinite;
-  animation-play-state: running;
 
   @media (hover: hover) {
     &:hover {
@@ -64,48 +43,166 @@
 }
 
 // =====================================================
+// ESCALA TIPOGRÁFICA
+// Mobile → desktop con clamp(); ver tabla en docs.
+// =====================================================
+
+@mixin t-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 1.8rem + 4vw, 4.5rem); // 44 → 72
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+@mixin t-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.95rem + 2.4vw, 3.5rem); // 40 → 56
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+@mixin t-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.7rem + 1.2vw, 2.5rem); // 32 → 40
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+@mixin t-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.1rem + 0.75vw, 1.625rem); // 22 → 26
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin t-title {
+  font-family: var(--font-sans);
+  font-size: 1.125rem; // 18
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+@mixin t-body-lg {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 1rem + 0.15vw, 1.125rem); // 17 → 18
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+@mixin t-body {
+  font-family: var(--font-sans);
+  font-size: 1rem; // 16
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+@mixin t-small {
+  font-family: var(--font-sans);
+  font-size: 0.875rem; // 14
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+@mixin t-button {
+  font-family: var(--font-sans);
+  font-size: 0.875rem; // 14
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+@mixin t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem; // 12
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@mixin t-numeral {
+  font-family: var(--font-mono);
+  font-size: 0.875rem; // 14
+  font-weight: 500;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+// =====================================================
 // PLACEHOLDERS
 // =====================================================
 
 %container {
   width: 100%;
-  max-width: 1280px;
+  max-width: calc(var(--container) + 2 * var(--gutter));
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: var(--gutter);
 }
 
-// Etiqueta superior (eyebrow) — mono caps
+// Padding vertical idéntico en todas las secciones
+%section {
+  padding-block: var(--section-y);
+}
+
+// Eyebrow: Poppins caps precedido por una línea de 24×1px
 %eyebrow {
+  @include t-eyebrow;
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  font-family: $font-mono;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $terracota;
+  gap: var(--space-3);
+  color: var(--cafe-700);
 
   &::before {
     content: '';
-    width: 2rem;
+    width: 24px;
     height: 1px;
-    background: $terracota;
+    background: currentColor;
     flex: 0 0 auto;
   }
 }
 
-// Título de sección
-%sec-title {
-  font-family: $font-display;
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-  color: $marron;
+// Eyebrow sobre fondo oscuro
+%eyebrow-dark {
+  @extend %eyebrow;
+  color: var(--sand-300);
 }
 
-// Marco tipo arco (herencia gráfica del local)
+// Títulos de sección (h2)
+%sec-title {
+  @include t-h2;
+  color: var(--espresso-800);
+  text-wrap: balance;
+}
+
+// Marco tipo arco: reservado para UNA imagen por página (la del hero)
 %arch {
-  border-radius: $radius-pill $radius-pill $radius-md $radius-md;
+  border-radius: var(--radius-pill) var(--radius-pill) var(--radius-md) var(--radius-md);
+}
+
+// Bajada / párrafo de lectura
+%lead {
+  @include t-body-lg;
+  color: var(--text-muted);
+  max-width: 36rem;
+}
+
+// Foto con relación y radio del sistema.
+// --focal (en el <img>) ajusta el encuadre cuando el recorte corta el plato.
+%photo {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--cream-200);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--focal, 50% 50%);
+  }
 }

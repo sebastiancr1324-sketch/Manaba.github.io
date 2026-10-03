@@ -1,10 +1,9 @@
 // =====================================================
 // MAIN — Manaba
-// Sistema de diseño premium · minimalista y editorial
+// Sistema editorial: Fraunces + Poppins + JetBrains Mono
 // =====================================================
 
-@use 'variables' as *;
-@use 'mixins' as *;
+@use 'tokens';
 @use 'base';
 @use 'uikit';
 @use 'header';
@@ -14,7 +13,6 @@
 @use 'split';
 @use 'paginas';
 @use 'forms';
-@use 'reveal';
 @use 'legal';
 @use 'cookies';
 @use 'menu';
@@ -24,3 +22,4 @@
 @use 'contacto';
 @use 'restaurantes';
 @use 'footer';
+@use 'reveal';

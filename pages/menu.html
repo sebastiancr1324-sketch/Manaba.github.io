@@ -9,7 +9,7 @@
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/main.css">
 </head>
@@ -53,333 +53,211 @@
   </header>
 
   <main id="contenido">
-    <section class="pagina-hero reveal reveal--left">
-      <span class="pagina-hero__eyebrow">La carta</span>
-      <h1 class="pagina-hero__title">Un menú <em>de estación</em></h1>
-      <p class="pagina-hero__text">Café de especialidad, brunch y panadería propia. Todo preparado en el día, con productos frescos y granos de origen.</p>
+    <section class="pagina-hero">
+      <div class="pagina-hero__inner">
+        <span class="pagina-hero__eyebrow">La carta</span>
+        <h1 class="pagina-hero__title">Un menú <em>de estación</em></h1>
+        <p class="pagina-hero__text">Café de especialidad, brunch y panadería propia. Todo preparado en el día, con productos frescos y granos de origen.</p>
+      </div>
     </section>
 
-    <section class="menu-seccion">
-      <div class="menu-seccion__head">
-        <div>
-          <span class="menu-seccion__eyebrow">Para arrancar</span>
-          <h2 class="menu-seccion__title">Café de especialidad</h2>
+    <div class="carta">
+      <section class="carta-seccion" aria-labelledby="carta-cafe">
+        <div class="carta-seccion__head">
+          <span class="carta-seccion__eyebrow">Para arrancar</span>
+          <h2 class="carta-seccion__title" id="carta-cafe">Café de especialidad</h2>
+          <div class="carta-seccion__media">
+            <img src="../img/foto-menu-cafe.webp" width="1200" height="1800" loading="lazy" decoding="async" style="--focal: 50% 66%" alt="Dos cafés con arte latte sobre una mesa de madera">
+          </div>
         </div>
-        <span class="menu-seccion__count">04</span>
-      </div>
-      <div class="menu-seccion__grid reveal-stagger">
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-cafe.svg" alt="Espresso">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Café</span>
-              <span class="num">01</span>
+        <ul class="carta-lista reveal-stagger">
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Espresso</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$1200</span>
             </div>
-            <h3 class="card-plato__title">Espresso</h3>
-            <p class="card-plato__desc">Doble shot corto, crema espesa y notas a caramelo.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Tostado propio</span>
-              <p class="card-plato__precio">$1200</p>
+            <p class="carta-item__desc">Doble shot corto, crema espesa y notas a caramelo.</p>
+            <span class="tag">Tostado propio</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Capuchino</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$1700</span>
             </div>
-          </div>
-        </article>
+            <p class="carta-item__desc">Espresso, espuma de leche aterciopelada y un toque de cacao.</p>
+            <span class="tag">Tostado propio</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Latte</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$1900</span>
+            </div>
+            <p class="carta-item__desc">Suave y cremoso, con leche al vapor y café de cuerpo medio.</p>
+            <span class="tag">Tostado propio</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Filtrado de origen</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$1600</span>
+            </div>
+            <p class="carta-item__desc">Método manual, granos de origen único y notas delicadas.</p>
+            <span class="tag">Origen único</span>
+          </li>
+        </ul>
+      </section>
 
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-cafe.svg" alt="Capuchino">
+      <section class="carta-seccion" aria-labelledby="carta-brunch">
+        <div class="carta-seccion__head">
+          <span class="carta-seccion__eyebrow">Para compartir la mesa</span>
+          <h2 class="carta-seccion__title" id="carta-brunch">Brunch</h2>
+          <div class="carta-seccion__media">
+            <img src="../img/foto-menu-panqueques.webp" width="1200" height="1450" loading="lazy" decoding="async" style="--focal: 50% 62%" alt="Pila de panqueques con banana y almíbar">
           </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Café</span>
-              <span class="num">02</span>
-            </div>
-            <h3 class="card-plato__title">Capuchino</h3>
-            <p class="card-plato__desc">Espresso, espuma de leche aterciopelada y un toque de cacao.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Tostado propio</span>
-              <p class="card-plato__precio">$1700</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-cafe.svg" alt="Latte">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Café</span>
-              <span class="num">03</span>
-            </div>
-            <h3 class="card-plato__title">Latte</h3>
-            <p class="card-plato__desc">Suave y cremoso, con leche al vapor y café de cuerpo medio.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Tostado propio</span>
-              <p class="card-plato__precio">$1900</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-cafe.svg" alt="Filtrado de origen">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Café</span>
-              <span class="num">04</span>
-            </div>
-            <h3 class="card-plato__title">Filtrado de origen</h3>
-            <p class="card-plato__desc">Método manual, granos de origen único y notas delicadas.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Origen único</span>
-              <p class="card-plato__precio">$1600</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-seccion">
-      <div class="menu-seccion__head">
-        <div>
-          <span class="menu-seccion__eyebrow">Para compartir la mesa</span>
-          <h2 class="menu-seccion__title">Brunch</h2>
         </div>
-        <span class="menu-seccion__count">04</span>
-      </div>
-      <div class="menu-seccion__grid reveal-stagger">
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-brunch.svg" alt="Tostado de palta y huevo poché">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">01</span>
+        <ul class="carta-lista reveal-stagger">
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Tostado de palta y huevo poché</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$9800</span>
             </div>
-            <h3 class="card-plato__title">Tostado de palta y huevo poché</h3>
-            <p class="card-plato__desc">Pan de masa madre, palta, huevo poché y semillas tostadas.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">De estación</span>
-              <p class="card-plato__precio">$9800</p>
+            <p class="carta-item__desc">Pan de masa madre, palta, huevo poché y semillas tostadas.</p>
+            <span class="tag">De estación</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Panqueques con frutos rojos</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$8600</span>
             </div>
-          </div>
-        </article>
+            <p class="carta-item__desc">Panqueques caseros, frutos rojos de estación y miel.</p>
+            <span class="tag">De estación</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Granola de estación</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$7200</span>
+            </div>
+            <p class="carta-item__desc">Granola casera, yogur natural y frutas de temporada.</p>
+            <span class="tag">De estación</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Huevos revueltos con masa madre</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$8400</span>
+            </div>
+            <p class="carta-item__desc">Huevos revueltos cremosos sobre pan de masa madre tostado.</p>
+            <span class="tag">De estación</span>
+          </li>
+        </ul>
+      </section>
 
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-brunch.svg" alt="Panqueques con frutos rojos">
+      <section class="carta-seccion" aria-labelledby="carta-panaderia">
+        <div class="carta-seccion__head">
+          <span class="carta-seccion__eyebrow">Hecho en casa</span>
+          <h2 class="carta-seccion__title" id="carta-panaderia">Panadería</h2>
+          <div class="carta-seccion__media">
+            <img src="../img/foto-nos-tostado2.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Hogaza de pan de masa madre enharinada">
           </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">02</span>
-            </div>
-            <h3 class="card-plato__title">Panqueques con frutos rojos</h3>
-            <p class="card-plato__desc">Panqueques caseros, frutos rojos de estación y miel.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">De estación</span>
-              <p class="card-plato__precio">$8600</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-brunch.svg" alt="Granola de estación">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">03</span>
-            </div>
-            <h3 class="card-plato__title">Granola de estación</h3>
-            <p class="card-plato__desc">Granola casera, yogur natural y frutas de temporada.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">De estación</span>
-              <p class="card-plato__precio">$7200</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-brunch.svg" alt="Huevos revueltos con masa madre">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Brunch</span>
-              <span class="num">04</span>
-            </div>
-            <h3 class="card-plato__title">Huevos revueltos con masa madre</h3>
-            <p class="card-plato__desc">Huevos revueltos cremosos sobre pan de masa madre tostado.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">De estación</span>
-              <p class="card-plato__precio">$8400</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-seccion">
-      <div class="menu-seccion__head">
-        <div>
-          <span class="menu-seccion__eyebrow">Hecho en casa</span>
-          <h2 class="menu-seccion__title">Panadería</h2>
         </div>
-        <span class="menu-seccion__count">04</span>
-      </div>
-      <div class="menu-seccion__grid reveal-stagger">
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-panaderia.svg" alt="Medialuna de manteca">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Panadería</span>
-              <span class="num">01</span>
+        <ul class="carta-lista reveal-stagger">
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Medialuna de manteca</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$900</span>
             </div>
-            <h3 class="card-plato__title">Medialuna de manteca</h3>
-            <p class="card-plato__desc">Hojaldrada, tibia y apenas dulce. Horneadas a la mañana.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Horneada en el día</span>
-              <p class="card-plato__precio">$900</p>
+            <p class="carta-item__desc">Hojaldrada, tibia y apenas dulce. Horneadas a la mañana.</p>
+            <span class="tag">Horneada en el día</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Pan de masa madre</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$3200</span>
             </div>
-          </div>
-        </article>
+            <p class="carta-item__desc">Fermentación lenta, corteza crocante y miga alveolada.</p>
+            <span class="tag">Horneado en el día</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Scone de frambuesa</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$1500</span>
+            </div>
+            <p class="carta-item__desc">Rústico, con frambuesas y un toque de crema ácida.</p>
+            <span class="tag">De estación</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Tostado con queso</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$4600</span>
+            </div>
+            <p class="carta-item__desc">Pan de masa madre, queso derretido y manteca de hierbas.</p>
+            <span class="tag">Horneado en el día</span>
+          </li>
+        </ul>
+      </section>
 
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-panaderia.svg" alt="Pan de masa madre">
+      <section class="carta-seccion" aria-labelledby="carta-granos">
+        <div class="carta-seccion__head">
+          <span class="carta-seccion__eyebrow">Para llevar</span>
+          <h2 class="carta-seccion__title" id="carta-granos">Granos envasados</h2>
+          <div class="carta-seccion__media">
+            <img src="../img/foto-nos-tostado.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Granos de café tostado en una bolsa de arpillera">
           </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Panadería</span>
-              <span class="num">02</span>
-            </div>
-            <h3 class="card-plato__title">Pan de masa madre</h3>
-            <p class="card-plato__desc">Fermentación lenta, corteza crocante y miga alveolada.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Horneado en el día</span>
-              <p class="card-plato__precio">$3200</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-panaderia.svg" alt="Scone de frambuesa">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Panadería</span>
-              <span class="num">03</span>
-            </div>
-            <h3 class="card-plato__title">Scone de frambuesa</h3>
-            <p class="card-plato__desc">Rústico, con frambuesas y un toque de crema ácida.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">De estación</span>
-              <p class="card-plato__precio">$1500</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-panaderia.svg" alt="Tostado con queso">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Panadería</span>
-              <span class="num">04</span>
-            </div>
-            <h3 class="card-plato__title">Tostado con queso</h3>
-            <p class="card-plato__desc">Pan de masa madre, queso derretido y manteca de hierbas.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Horneado en el día</span>
-              <p class="card-plato__precio">$4600</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-seccion">
-      <div class="menu-seccion__head">
-        <div>
-          <span class="menu-seccion__eyebrow">Para llevar</span>
-          <h2 class="menu-seccion__title">Granos envasados</h2>
         </div>
-        <span class="menu-seccion__count">03</span>
-      </div>
-      <div class="menu-seccion__grid reveal-stagger">
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-granos.svg" alt="Manaba Balance 250g">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Para llevar</span>
-              <span class="num">01</span>
+        <ul class="carta-lista reveal-stagger">
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Manaba Balance</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$5200</span>
             </div>
-            <h3 class="card-plato__title">Manaba Balance</h3>
-            <p class="card-plato__desc">Perfil medio, ideales para espresso y filtrado. Bolsa de 250g.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Bolsa 250g</span>
-              <p class="card-plato__precio">$5200</p>
+            <p class="carta-item__desc">Perfil medio, ideales para espresso y filtrado. Bolsa de 250g.</p>
+            <span class="tag">Bolsa 250g</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Manaba Origen</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$6800</span>
             </div>
-          </div>
-        </article>
+            <p class="carta-item__desc">Origen único, notas a cítricos y chocolate. Bolsa de 250g.</p>
+            <span class="tag">Bolsa 250g</span>
+          </li>
+          <li class="carta-item">
+            <div class="carta-item__head">
+              <h3 class="carta-item__name">Manaba Intenso</h3>
+              <span class="carta-item__dots" aria-hidden="true"></span>
+              <span class="carta-item__price">$5800</span>
+            </div>
+            <p class="carta-item__desc">Tostado medio-alto, notas a cacao y especias. Bolsa de 250g.</p>
+            <span class="tag">Bolsa 250g</span>
+          </li>
+        </ul>
+      </section>
+    </div>
 
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-granos.svg" alt="Manaba Origen 250g">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Para llevar</span>
-              <span class="num">02</span>
-            </div>
-            <h3 class="card-plato__title">Manaba Origen</h3>
-            <p class="card-plato__desc">Origen único, notas a cítricos y chocolate. Bolsa de 250g.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Bolsa 250g</span>
-              <p class="card-plato__precio">$6800</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card-plato">
-          <div class="card-plato__media">
-            <img src="../img/item-granos.svg" alt="Manaba Intenso 250g">
-          </div>
-          <div class="card-plato__body">
-            <div class="card-plato__meta">
-              <span class="chip">Para llevar</span>
-              <span class="num">03</span>
-            </div>
-            <h3 class="card-plato__title">Manaba Intenso</h3>
-            <p class="card-plato__desc">Tostado medio-alto, notas a cacao y especias. Bolsa de 250g.</p>
-            <div class="card-plato__foot">
-              <span class="chip chip--grano">Bolsa 250g</span>
-              <p class="card-plato__precio">$5800</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta-band reveal reveal--bottom">
+    <section class="cta-band reveal" aria-labelledby="cta-mayorista">
       <div class="cta-band__inner">
-        <span class="cta-band__eyebrow">Manaba Mayorista</span>
-        <h2 class="cta-band__title">¿Querés nuestro café en <em>tu restaurante?</em></h2>
-        <p class="cta-band__text">Tostado propio, entrenamiento barista y asesoría para tu carta.</p>
-        <div class="cta-band__actions">
-          <a href="restaurantes.html" class="btn btn--light">Ver propuesta mayorista</a>
+        <div>
+          <span class="cta-band__eyebrow">Manaba Mayorista</span>
+          <h2 class="cta-band__title" id="cta-mayorista">¿Querés nuestro café en <em>tu restaurante</em>?</h2>
+          <p class="cta-band__text">Tostado propio, entrenamiento barista y asesoría para tu carta.</p>
+          <div class="cta-band__actions">
+            <a href="restaurantes.html" class="btn btn--light">Ver propuesta mayorista</a>
+          </div>
+        </div>
+        <div class="cta-band__media">
+          <img src="../img/foto-b2b-intro.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Barista preparando café filtrado con una pava de pico fino">
         </div>
       </div>
     </section>
@@ -388,23 +266,40 @@
   <footer class="footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand">Manaba</p>
+        <div class="footer__brand">
+          <span class="footer__brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9h9v5a4.5 4.5 0 0 1-9 0Z"/>
+              <path d="M15 10.5h1.2a2.3 2.3 0 0 1 0 4.6H15"/>
+              <path d="M10.5 7V5.8M13.5 7V5.8"/>
+            </svg>
+          </span>
+          <span>
+            <span class="footer__brand-text">Manaba</span>
+            <span class="footer__brand-sub">Café de especialidad</span>
+          </span>
+        </div>
         <p class="footer__tagline">Café de especialidad, brunch y panadería de barrio en Palermo.</p>
         <div class="footer__social">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram de Manaba">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <a class="footer__link" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
+            <span>Instagram</span>
           </a>
         </div>
       </div>
 
       <div>
         <p class="footer__title">Visitá el café</p>
-        <p class="footer__text">Gorriti 4820, Palermo<br>+54 9 11 0000-0000<br>hola@manaba.com.ar</p>
+        <p class="footer__text">Gorriti 4820, Palermo<br><span class="num">+54 9 11 0000-0000</span><br>hola@manaba.com.ar</p>
+        <a class="footer__link" href="https://www.google.com/maps/search/?api=1&amp;query=Gorriti+4820%2C+Palermo%2C+CABA" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Cómo llegar</span>
+        </a>
       </div>
 
       <div>
         <p class="footer__title">Horarios</p>
-        <p class="footer__text">Martes a Domingo<br>8:30 a 19:00hs<br>Lunes cerrado</p>
+        <p class="footer__text">Martes a Domingo<br><span class="num">8:30 a 19:00hs</span><br>Lunes cerrado</p>
       </div>
 
       <div>
