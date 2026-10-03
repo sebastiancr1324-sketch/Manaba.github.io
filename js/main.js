@@ -56,32 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
       aviso.textContent = '¡Gracias! Este es un sitio de demostración, así que el formulario no envía datos.';
     });
   });
-
-  const CLAVE_COOKIES = 'manaba-cookie-consent';
-  const banner = document.getElementById('cookiesBanner');
-
-  if (banner) {
-    let consentimiento = null;
-    try {
-      consentimiento = localStorage.getItem(CLAVE_COOKIES);
-    } catch (e) {
-      consentimiento = null;
-    }
-
-    if (consentimiento) {
-      banner.hidden = true;
-    }
-
-    banner.querySelectorAll('[data-cookie]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const valor = btn.dataset.cookie;
-        try {
-          localStorage.setItem(CLAVE_COOKIES, valor);
-        } catch (e) {
-          /* modo privado sin almacenamiento: solo ocultamos el aviso */
-        }
-        banner.hidden = true;
-      });
-    });
-  }
 });
