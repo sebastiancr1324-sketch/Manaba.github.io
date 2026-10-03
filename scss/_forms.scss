@@ -51,7 +51,7 @@
       @include ease(border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease);
 
       &::placeholder {
-        color: rgba($marron-suave, 0.7);
+        color: rgba($marron-suave, 0.9); // 4,8:1 sobre $crema (AA)
       }
 
       &:hover {

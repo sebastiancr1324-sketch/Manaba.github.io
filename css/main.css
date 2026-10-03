@@ -1118,7 +1118,7 @@ input, select, textarea {
 .formulario__field input::placeholder,
 .formulario__field textarea::placeholder,
 .formulario__field select::placeholder {
-  color: rgba(108, 91, 74, 0.7);
+  color: rgba(108, 91, 74, 0.9);
 }
 .formulario__field input:hover,
 .formulario__field textarea:hover,
@@ -2114,7 +2114,7 @@ input, select, textarea {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-top: 1px solid rgba(255, 253, 249, 0.1);
-  color: rgba(255, 253, 249, 0.45);
+  color: rgba(255, 253, 249, 0.5);
   font-size: 0.78rem;
   text-align: center;
 }
