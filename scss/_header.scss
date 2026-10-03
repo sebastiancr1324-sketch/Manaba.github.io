@@ -79,12 +79,13 @@
       @include ease(transform 0.25s ease, opacity 0.25s ease);
     }
 
+    // Las dos barras (separadas 4px) se cruzan en el centro y forman una X
     &[aria-expanded='true'] {
       span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
+        transform: translateY(3px) rotate(45deg);
       }
       span:nth-child(2) {
-        opacity: 0;
+        transform: translateY(-3px) rotate(-45deg);
       }
     }
 

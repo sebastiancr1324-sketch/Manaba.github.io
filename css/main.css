@@ -371,10 +371,10 @@ input, select, textarea {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 .header__toggle[aria-expanded=true] span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(3px) rotate(45deg);
 }
 .header__toggle[aria-expanded=true] span:nth-child(2) {
-  opacity: 0;
+  transform: translateY(-3px) rotate(-45deg);
 }
 @media (min-width: 1240px) {
   .header__toggle {

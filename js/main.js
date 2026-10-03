@@ -3,9 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.header__nav');
 
   if (boton && menu) {
-    boton.addEventListener('click', () => {
-      const abierto = menu.classList.toggle('is-open');
+    const setMenu = (abierto) => {
+      menu.classList.toggle('is-open', abierto);
       boton.setAttribute('aria-expanded', abierto);
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    };
+
+    boton.addEventListener('click', () => {
+      setMenu(!menu.classList.contains('is-open'));
+    });
+
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape' && menu.classList.contains('is-open')) {
+        setMenu(false);
+        boton.focus();
+      }
     });
   }
 
