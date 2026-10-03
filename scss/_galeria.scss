@@ -55,6 +55,10 @@
   border-radius: $radius-md;
   border: 1px solid $borde;
   background: $arena;
+  // Columna flex: si la fila es más alta que la foto (celdas de distinto
+  // ancho en escritorio), la foto se estira y no queda una franja vacía.
+  display: flex;
+  flex-direction: column;
   @include ease(transform 0.3s ease, box-shadow 0.3s ease);
 
   &:hover {
@@ -68,6 +72,7 @@
 
   &__media {
     display: block;
+    flex: 1 0 auto;
     aspect-ratio: 4 / 3;
     overflow: hidden;
 

@@ -1390,6 +1390,8 @@ input, select, textarea {
   border-radius: 8px;
   border: 1px solid #E3D9CC;
   background: #E9E3DD;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .item-galeria:hover {
@@ -1401,6 +1403,7 @@ input, select, textarea {
 }
 .item-galeria__media {
   display: block;
+  flex: 1 0 auto;
   aspect-ratio: 4/3;
   overflow: hidden;
 }
