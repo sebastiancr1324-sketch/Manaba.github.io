@@ -1714,6 +1714,9 @@ input, select, textarea {
   color: #5D4432;
   border-color: #5D4432;
 }
+.card-contacto__text a[href^="tel:"] {
+  white-space: nowrap;
+}
 
 .contacto-form {
   max-width: 820px;

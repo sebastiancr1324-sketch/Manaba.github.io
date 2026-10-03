@@ -55,6 +55,11 @@
         border-color: $terracota;
       }
     }
+
+    // que el número de teléfono no se parta en dos líneas
+    a[href^='tel:'] {
+      white-space: nowrap;
+    }
   }
 }
 
