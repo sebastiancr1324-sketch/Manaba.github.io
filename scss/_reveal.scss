@@ -2,24 +2,18 @@
 // REVEAL — aparición al scrollear (solo debajo del
 // primer pantallazo; los heroes no usan reveal para
 // que el texto nunca se vea con poco contraste).
+// Solo se ocultan si hay JS (clase .js en <html>): sin JS
+// o si el script falla, el contenido se ve igual.
 // =====================================================
 
 @use 'variables' as *;
 
 $reveal-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.7s $reveal-ease, transform 0.7s $reveal-ease;
-
-  &--left {
-    transform: translateX(-24px);
-  }
-
-  &--right {
-    transform: translateX(24px);
-  }
 
   &.is-visible {
     opacity: 1;
@@ -28,7 +22,7 @@ $reveal-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
 // Cards que entran en cascada
-.reveal-stagger {
+.js .reveal-stagger {
   & > * {
     opacity: 0;
     transform: translateY(16px);
@@ -49,8 +43,8 @@ $reveal-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
 
 // Sin movimiento: todo visible desde el inicio
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-stagger > * {
+  .js .reveal,
+  .js .reveal-stagger > * {
     opacity: 1;
     transform: none;
   }

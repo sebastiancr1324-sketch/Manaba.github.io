@@ -29,7 +29,7 @@
       display: block;
       font-family: var(--font-sans);
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.4;
       color: var(--espresso-800);
       margin-bottom: var(--space-2);
@@ -92,5 +92,16 @@
   &__submit {
     width: 100%;
     margin-top: var(--space-2);
+  }
+
+  // Aviso del sitio de demostración (lo inserta js/main.js al enviar)
+  &__aviso {
+    @include t-small;
+    color: var(--text-muted);
+    text-align: center;
+
+    &:not(:empty) {
+      margin-top: var(--space-4);
+    }
   }
 }

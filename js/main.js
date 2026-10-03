@@ -12,21 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (boton && menu) {
-    const cerrarMenu = () => {
-      menu.classList.remove('is-open');
-      boton.setAttribute('aria-expanded', 'false');
-      boton.setAttribute('aria-label', 'Abrir menú');
+    const setMenu = (abierto) => {
+      menu.classList.toggle('is-open', abierto);
+      boton.setAttribute('aria-expanded', abierto);
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
     };
 
     boton.addEventListener('click', () => {
-      const abierto = menu.classList.toggle('is-open');
-      boton.setAttribute('aria-expanded', abierto);
-      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+      setMenu(!menu.classList.contains('is-open'));
     });
 
     document.addEventListener('keydown', (evento) => {
       if (evento.key === 'Escape' && menu.classList.contains('is-open')) {
-        cerrarMenu();
+        setMenu(false);
         boton.focus();
       }
     });
@@ -54,31 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
     elementos.forEach((el) => observador.observe(el));
   }
 
-  const CLAVE_COOKIES = 'manaba-cookie-consent';
-  const banner = document.getElementById('cookiesBanner');
+  // Año del copyright siempre al día (el HTML trae uno de respaldo)
+  document.querySelectorAll('[data-anio]').forEach((el) => {
+    el.textContent = el.textContent.replace(/\d{4}/, new Date().getFullYear());
+  });
 
-  if (banner) {
-    let consentimiento = null;
-    try {
-      consentimiento = localStorage.getItem(CLAVE_COOKIES);
-    } catch (e) {
-      consentimiento = null;
-    }
-
-    if (consentimiento) {
-      banner.hidden = true;
-    }
-
-    banner.querySelectorAll('[data-cookie]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const valor = btn.dataset.cookie;
-        try {
-          localStorage.setItem(CLAVE_COOKIES, valor);
-        } catch (e) {
-          /* modo privado sin almacenamiento: solo ocultamos el aviso */
-        }
-        banner.hidden = true;
-      });
-    });
+  // Reservas: no permitir fechas pasadas (fecha local, no UTC)
+  const fecha = document.querySelector('input[type="date"]#fecha');
+  if (fecha) {
+    const hoy = new Date();
+    hoy.setMinutes(hoy.getMinutes() - hoy.getTimezoneOffset());
+    fecha.min = hoy.toISOString().slice(0, 10);
   }
+
+  // Sitio de demostración: GitHub Pages no acepta envíos (responde 405),
+  // así que los formularios avisan en lugar de enviar.
+  document.querySelectorAll('form.formulario').forEach((form) => {
+    const aviso = document.createElement('p');
+    aviso.className = 'formulario__aviso';
+    aviso.setAttribute('role', 'status');
+    form.append(aviso);
+
+    form.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      aviso.textContent = '¡Gracias! Este es un sitio de demostración, así que el formulario no envía datos.';
+    });
+  });
 });

@@ -96,6 +96,7 @@
       @include ease(transform 0.25s ease, opacity 0.25s ease);
     }
 
+    // Las dos barras (separadas 4px) se cruzan en el centro y forman una X
     &[aria-expanded='true'] {
       span:nth-child(1) {
         transform: translateY(3px) rotate(45deg);
@@ -126,7 +127,7 @@
       min-height: 44px;
       font-family: var(--font-sans);
       font-size: 0.875rem; // 14
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1;
       white-space: nowrap;
       color: var(--espresso-800);

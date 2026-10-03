@@ -54,6 +54,54 @@
   }
 }
 
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins-400-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins-600-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins-600-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/poppins-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 .footer__inner, .footer__legal, .rest-intro, .rest-panel, .rest-block__inner, .rest-contact, .contacto-info, .contacto-form, .nosotros-valores__inner, .nosotros-historia, .nosotros-galeria, .reserva-grid, .carta, .contenido-legal, .pagina-hero, .cta-band, .split, .destacados, .hero, .info-franja, .header__inner, .container {
   width: 100%;
   max-width: calc(var(--container) + 2 * var(--gutter));
@@ -348,7 +396,7 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: none;
   color: var(--cafe-700);
@@ -479,7 +527,7 @@ input, select, textarea {
   min-height: 44px;
   font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   white-space: nowrap;
   color: var(--espresso-800);
@@ -744,7 +792,7 @@ input, select, textarea {
 .info-franja__item strong {
   font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
   color: var(--espresso-800);
 }
@@ -1115,7 +1163,7 @@ input, select, textarea {
   display: block;
   font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
   color: var(--espresso-800);
   margin-bottom: var(--space-2);
@@ -1172,6 +1220,17 @@ input, select, textarea {
 .formulario__submit {
   width: 100%;
   margin-top: var(--space-2);
+}
+.formulario__aviso {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-muted);
+  text-align: center;
+}
+.formulario__aviso:not(:empty) {
+  margin-top: var(--space-4);
 }
 
 .contenido-legal > * {
@@ -1233,57 +1292,6 @@ input, select, textarea {
 }
 .contenido-legal a:hover {
   text-decoration-color: var(--cafe-700);
-}
-
-.cookies-banner {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: var(--space-4);
-  z-index: 200;
-  padding-inline: var(--space-4);
-  pointer-events: none;
-}
-.cookies-banner[hidden] {
-  display: none;
-}
-.cookies-banner__inner {
-  pointer-events: auto;
-  max-width: 960px;
-  margin-inline: auto;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-4) var(--space-6);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4) var(--space-6);
-  flex-wrap: wrap;
-}
-.cookies-banner p {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.55;
-  flex: 1 1 320px;
-  color: var(--text-muted);
-}
-.cookies-banner p a {
-  color: var(--cafe-700);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-.cookies-banner__actions {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--space-3);
-  flex-wrap: wrap;
 }
 
 .carta-seccion {
@@ -1516,7 +1524,7 @@ input, select, textarea {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--espresso-800);
 }
 
@@ -1688,6 +1696,9 @@ input, select, textarea {
 .card-contacto__text a:hover {
   text-decoration-color: var(--cafe-700);
 }
+.card-contacto__text a[href^="tel:"] {
+  white-space: nowrap;
+}
 
 .contacto-form {
   max-width: calc(52rem + 2 * var(--gutter));
@@ -1832,7 +1843,7 @@ input, select, textarea {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--cafe-700);
 }
 .card-grano__desc {
@@ -2077,7 +2088,7 @@ input, select, textarea {
   align-items: center;
   gap: var(--space-2);
   min-height: 44px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--sand-300);
 }
 .footer__link svg {
@@ -2122,65 +2133,59 @@ input, select, textarea {
   text-align: center;
 }
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
-.reveal--left {
-  transform: translateX(-24px);
-}
-.reveal--right {
-  transform: translateX(24px);
-}
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
-.reveal-stagger > * {
+.js .reveal-stagger > * {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 0.3s ease;
 }
-.reveal-stagger > *:nth-child(1) {
+.js .reveal-stagger > *:nth-child(1) {
   transition-delay: 0ms, 0ms, 0ms;
 }
-.reveal-stagger > *:nth-child(2) {
+.js .reveal-stagger > *:nth-child(2) {
   transition-delay: 70ms, 70ms, 0ms;
 }
-.reveal-stagger > *:nth-child(3) {
+.js .reveal-stagger > *:nth-child(3) {
   transition-delay: 140ms, 140ms, 0ms;
 }
-.reveal-stagger > *:nth-child(4) {
+.js .reveal-stagger > *:nth-child(4) {
   transition-delay: 210ms, 210ms, 0ms;
 }
-.reveal-stagger > *:nth-child(5) {
+.js .reveal-stagger > *:nth-child(5) {
   transition-delay: 280ms, 280ms, 0ms;
 }
-.reveal-stagger > *:nth-child(6) {
+.js .reveal-stagger > *:nth-child(6) {
   transition-delay: 350ms, 350ms, 0ms;
 }
-.reveal-stagger > *:nth-child(7) {
+.js .reveal-stagger > *:nth-child(7) {
   transition-delay: 420ms, 420ms, 0ms;
 }
-.reveal-stagger > *:nth-child(8) {
+.js .reveal-stagger > *:nth-child(8) {
   transition-delay: 490ms, 490ms, 0ms;
 }
-.reveal-stagger > *:nth-child(9) {
+.js .reveal-stagger > *:nth-child(9) {
   transition-delay: 560ms, 560ms, 0ms;
 }
-.reveal-stagger > *:nth-child(10) {
+.js .reveal-stagger > *:nth-child(10) {
   transition-delay: 630ms, 630ms, 0ms;
 }
-.reveal-stagger.is-visible > * {
+.js .reveal-stagger.is-visible > * {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-stagger > * {
+  .js .reveal,
+  .js .reveal-stagger > * {
     opacity: 1;
     transform: none;
   }
