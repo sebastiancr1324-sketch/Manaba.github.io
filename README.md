@@ -2,7 +2,7 @@
 
 Sitio de portafolio de un café ficticio en Palermo (CABA). HTML, SCSS y
 JavaScript sin dependencias, publicado con GitHub Pages en
-<https://sebastiancr1324-sketch.github.io/Manaba.github.io/>.
+<https://sebbasv.github.io/Manaba.github.io/>.
 
 ## Estructura
 
